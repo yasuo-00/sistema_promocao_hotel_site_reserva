@@ -22,24 +22,36 @@ html, body{
 
 .header{
     display: flex;
+    flex-direction: row;
     height: 8%;
     background-color: var(--light-orange);
     color: #fff;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
-    justify-content: space-between;
     top: 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .home{
     display: flex;
     flex-direction: row;
+    width: 10%;
+    align-items: center;
+    align-content: flex-end;
+    color: var(--dark-orange);
+    
+}
+.home:hover{
+    filter: var(--filter-white)
 }
 
 .homeSvg{
     content: url('../../assets/icons/home.svg');
+    width: 30%;
+    height: 80%;
+    padding-right: 0.5%;
+    filter: var(--filter-dark-orange);
 }
+
 
 .bgImage{
     content: url('../../assets/images/login_register_bg.jpg');

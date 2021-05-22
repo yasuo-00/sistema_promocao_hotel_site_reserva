@@ -12,4 +12,8 @@
 
     --font-family: 'Rubik';
 
+    --filter-white: brightness(0) invert(1);
+    --filter-dark-orange: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
+    --filter-blue: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+
 }

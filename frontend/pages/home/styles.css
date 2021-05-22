@@ -51,7 +51,7 @@ html, body{
     flex-direction: row;
 }
 .navigationOption:hover{
-    filter: brightness(0) invert(1);
+    filter: var(--filter-white)
 }
 .navigationOption p{
     margin-left: 4%;
