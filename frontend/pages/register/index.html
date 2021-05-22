@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Booking Deals</p>
+            <div class="home">
+                <div class="homeSvg"></div>
+                <p>Home</p>
+            </div>
+        </div>
+        <div class="pageContent">
+            <div class="bgImage"></div>
+            <div class="register">
+                <p class="registerTitle">Registrar</p>
+                <form class="registerForm">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Email">
+
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" placeholder="Senha">
+                    <label for="confirmPassword">Confirmar Senha:</label>
+                    <input type="confirmPassword" id="confirmPassword" name="confirmPassword" placeholder="Senha">
+                    <p>Tipo:</p>
+                    <div>
+                        <input type="checkbox" id="hotel" name="hotel">
+                        <label for="hotel">Hotel</label>
+                        <input type="checkbox" id="bookingSite" name="bookingSite">
+                        <label for="bookingSite">Site de Reservas</label>
+                    </div>
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ">
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" name="city" placeholder="Cidade">
+                    <label for="url">URL:</label>
+                    <input type="text" id="url" name="url" placeholder="URL">
+                    <input class="registerButton" type="button" value="REGISTRAR" onsubmit="">
+
+                </form>
+                <button class="loginButton">
+                    <p>Já possui conta? Clique aqui para logar</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
