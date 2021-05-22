@@ -16,6 +16,8 @@
     --border-radius-value: 15px;
 
     --font-family: 'Rubik';
+
+    --dashboard-svg-size: 20%;
 }
 
 html, body{
