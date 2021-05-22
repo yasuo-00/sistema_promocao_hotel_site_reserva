@@ -1,21 +1,5 @@
 @import url('../global_styles.css');
 
-:root{
-    --filter-dark-orange: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
-    --filter-blue: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
-}
-
-html, body{
-    margin: 0;
-    height: 100%;
-    font-family: var(--font-family);
-}
-.container{
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-    background-color: #e3eaeaea;
-}
 
 .pageContent{
     display: flex;

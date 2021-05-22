@@ -8,12 +8,24 @@
     --blue: #43acc7;
     --light-blue: #b6dfe9;
 
-    --border-radius-value: 15px;
-
-    --font-family: 'Rubik';
-
+    
     --filter-white: brightness(0) invert(1);
     --filter-dark-orange: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
     --filter-blue: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+    
+    --border-radius-value: 15px;
 
+    --font-family: 'Rubik';
+}
+
+html, body{
+    margin: 0;
+    height: 100%;
+    font-family: var(--font-family);
+}
+.container{
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-color: #e3eaeaea;
 }
