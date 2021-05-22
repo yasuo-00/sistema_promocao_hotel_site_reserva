@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-    return knex.schema.createTabel('booking_site', function (table){
+    return knex.schema.createTable('booking_site', function (table){
         table.integer('id_user').primary();
         table.string('url').notNullable().unique();
 

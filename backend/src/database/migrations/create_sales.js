@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-    return knex.schema.createTabel('sales', function (table){
+    return knex.schema.createTable('sales', function (table){
         table.increments('id_sales').primary();
         table.string('id_hotel').notNullable();
         table.string('id_booking_site').notNullable();
