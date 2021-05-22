@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import url('../global_styles.css');
 
 html, body{
     margin: 0;
     height: 100%;
-    font-family: 'Rubik';
+    font-family: var(--font-family);
 }
 .container{
     flex: 1;
@@ -23,7 +23,7 @@ html, body{
 .header{
     display: flex;
     height: 8%;
-    background-color: #f99a73;
+    background-color: var(--light-orange);
     color: #fff;
     flex-direction: row;
     align-items: center;
@@ -56,7 +56,7 @@ html, body{
     right: 40%;
     top: 8%;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: var(--border-radius-value);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
     z-index: 2;
     padding-bottom: 2%;
@@ -85,7 +85,7 @@ html, body{
 }
 
 .registerButton{
-    background-color: #43acc7;
+    background-color: var(--blue);
     border-radius: 10px;
     height: 2em;
     border-width: 0;
@@ -95,18 +95,18 @@ html, body{
 }
 
 .registerButton:hover{
-    background-color: #43adc78f;
+    background-color: var(--light-blue);
 }
 
 .loginButton{
-    border-radius: 15px;
+    border-radius: var(--border-radius-value);
     background-color: #fff;
     border-width: 0;
-    color: #f55713;
+    color: var(--dark-orange);
 }
 
 .loginButton:hover{
     background-color: #fff;
     border-width: 0;
-    color: #c54711;
+    color: var(--lighter-orange);
 }

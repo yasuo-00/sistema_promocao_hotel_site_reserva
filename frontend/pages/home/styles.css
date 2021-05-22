@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import url('../global_styles.css');
+
+:root{
+    --filter-dark-orange: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
+    --filter-blue: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+}
 
 html, body{
     margin: 0;
     height: 100%;
-    font-family: 'Rubik';
+    font-family: var(--font-family);
 }
 .container{
     flex: 1;
@@ -28,7 +33,7 @@ html, body{
 
 .dashboardHeader{
     height: 8%;
-    background-color: #f99a73;
+    background-color: var(--light-orange);
     color: #fff;
     padding-left: 4%;
 }
@@ -36,8 +41,8 @@ html, body{
 .navigation{
     flex-direction: column;
     height: 100%;
-    background-color: #faab89;
-    color: #f55713;
+    background-color: var(--light-orange);
+    color: var(--dark-orange);
     padding-top: 5%;
     padding-left: 4%;
 }
@@ -53,22 +58,22 @@ html, body{
 }
 
 .homeSvg{
-    content: url('../../../assets/icons/home.svg');
+    content: url('../../assets/icons/home.svg');
     height: 20%;
     width: 20%;
-    filter: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
+    filter: var(--filter-dark-orange);
 }
 .salesSvg{
-    content: url('../../../assets/icons/piggy-bank.svg');
+    content: url('../../assets/icons/piggy-bank.svg');
     height: 20%;
     width: 20%;
-    filter: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
+    filter: var(--filter-dark-orange);
 }
 .hotelSvg{
-    content: url('../../../assets//icons/hotel.svg');
+    content: url('../../assets//icons/hotel.svg');
     height: 20%;
     width: 20%;
-    filter: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
+    filter: var(--filter-dark-orange);
 }
 
 .mainContent{
@@ -99,7 +104,7 @@ html, body{
     font-size: 1.25em;
 }
 .searchSvg{
-    content: url('../../../assets/icons/search.svg');
+    content: url('../../assets/icons/search.svg');
     width: 10%;
     height: 70%;
     filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(84%) contrast(88%);
@@ -112,7 +117,7 @@ html, body{
     padding-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
-    border-radius: 15px;
+    border-radius: var(--border-radius-value);
     margin-bottom: 3%;
     padding-bottom: 2%;
     
@@ -129,10 +134,10 @@ html, body{
     padding-bottom: 3%;
 }
 .destinationSvg{
-    content: url('../../../assets/icons/destination.svg');
+    content: url('../../assets/icons/destination.svg');
     width: 8%;
     height: 8%;
-    filter: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+    filter: var(--filter-blue);
     margin-right: 1%;
 }
 .bookingDuration{
@@ -143,7 +148,7 @@ html, body{
     padding-bottom: 3%;
 }
 .filterForm input[type=submit]{
-    background-color: #43acc7;
+    background-color: var(--blue);
     border-radius: 10px;
     height: 2em;
     width: 90%;
@@ -153,7 +158,7 @@ html, body{
     bottom: 0%;
 }
 .filterForm input[type=submit]:hover{
-    background-color: #3890a7;
+    background-color: var(--light-blue);
 }
 
 .checkin, .checkout{
@@ -163,10 +168,10 @@ html, body{
 }
 
 .calendarSvg{
-    content: url('../../../assets/icons/calendar.svg');
+    content: url('../../assets/icons/calendar.svg');
     height: 13%;
     width: 13%;
-    filter: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+    filter: var(--filter-blue);
     margin-right: 1%;
 }
 
@@ -183,15 +188,15 @@ html, body{
     flex-direction: row;
     background-color: #fbfcfc;
     padding-right: 2%;
-    border-radius: 15px;
+    border-radius: var(--border-radius-value);
     margin-bottom: 5%;
 }
 .hotelImg{
-    content: url('../../../assets/images/hotel.jpg');
+    content: url('../../assets/images/hotel.jpg');
     height: 100%;
     width: 50%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: var(--border-radius-value);
+    border-bottom-left-radius: var(--border-radius-value);
 }
 
 .hotelInfo{
@@ -205,7 +210,7 @@ html, body{
     columns: #bebebe;
 }
 .hotelPrice{
-    color: #43acc7;
+    color: var(--blue);
     font-weight: bolder;
 }
 
@@ -217,7 +222,7 @@ html, body{
 
 .bgImage{
     position: absolute;
-    content: url('../../../assets/images/home_bg.jpg');
+    content: url('../../assets/images/home_bg.jpg');
     width: 100%;
     height: 100%;
     top: 0;
@@ -236,23 +241,23 @@ html, body{
 .registerButton{
     background-color: rgba(0, 0, 0, 0);
     border-width: 0;
-    color: #f55713;
+    color: var(--dark-orange);
     font-weight: bolder;
     font-size: 2em;
 }
 .registerButton:hover{
-    color: #bd4512;
+    color: var(--lighter-orange);
 }
 
 
 .loginButton{
     width: 30%;
-    background-color: #43acc7;
+    background-color: var(--blue);
     border-width: 0;
     font-size: 2em;
     border-radius: 10px;
     color: #fff;
 }
 .loginButton:hover{
-    background-color: #3890a7;
+    background-color: var(--light-blue);
 }
