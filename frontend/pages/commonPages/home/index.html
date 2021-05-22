@@ -13,6 +13,10 @@
             </div>
             <div class="navigation">
                 <div class="navigationOption">
+                    <div class="homeSvg"></div>
+                    <p>Home</p>
+                </div>
+                <div class="navigationOption">
                     <div class="salesSvg"></div>
                     <p>Promoções</p>
                 </div>
@@ -26,15 +30,27 @@
             <div class="search">
                 <form>
                     <input class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
+                    
                 </form>
+                <div class="searchSvg"></div>
+                
 
             </div>
             <div class="filter">
                 <form class="filterForm">
-                    <input type="text" placeholder="Cidade de Destino">
+                    <div class="destination">
+                        <div class="destinationSvg"></div>
+                        <input type="text" placeholder="Cidade de Destino">
+                    </div>
                     <div class="bookingDuration">
-                        <input type="text" placeholder="Check-in">
-                        <input type="text" placeholder="Check-out">
+                        <div class="checkin">
+                            <div class="calendarSvg"></div>
+                            <input type="text" placeholder="Check-in">
+                        </div>
+                        <div class="checkout">
+                            <div class="calendarSvg"></div>
+                            <input type="text" placeholder="Check-out">
+                        </div>
                     </div>
                     <input type="submit" value="PESQUISAR">
                 </form>
@@ -45,7 +61,21 @@
                     <div class="hotelInfo">
                         <p class="hotelName">
                             NOME HOTEL
-                        </p> 
+                        </p>
+                        <p class="hotelDescription">
+                            DESCRIÇÃO
+                        </p>
+                        <p class="hotelPrice">
+                            R$ XX,XX por noite
+                        </p>
+                    </div>
+                </div>
+                <div class="hotelCard">
+                    <div class="hotelImg"></div>
+                    <div class="hotelInfo">
+                        <p class="hotelName">
+                            NOME HOTEL
+                        </p>
                         <p class="hotelDescription">
                             DESCRIÇÃO
                         </p>
@@ -71,11 +101,11 @@
             </div>
         </div>
         <div class="account">
-            <div class="bgImage"></div>
             <div class="accountAction">
                 <button class="registerButton">CADASTRE-SE</button>
                 <button class="loginButton">LOGIN</button>
             </div>
+            <div class="bgImage"></div>
         </div>
     </div>
 </body>

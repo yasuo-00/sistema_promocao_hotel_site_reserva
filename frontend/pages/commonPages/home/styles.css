@@ -9,8 +9,6 @@ html, body{
     flex: 1;
     overflow: hidden;
     position: relative;
-    width: 100%;
-    height: 100%;
     background-color: #e3eaeaea;
 }
 
@@ -44,9 +42,22 @@ html, body{
     padding-left: 4%;
 }
 .navigationOption{
+    display: flex;
     flex-direction: row;
-} 
+}
+.navigationOption:hover{
+    filter: brightness(0) invert(1);
+}
+.navigationOption p{
+    margin-left: 4%;
+}
 
+.homeSvg{
+    content: url('../../../assets/icons/home.svg');
+    height: 20%;
+    width: 20%;
+    filter: invert(56%) sepia(73%) saturate(5424%) hue-rotate(353deg) brightness(97%) contrast(98%);
+}
 .salesSvg{
     content: url('../../../assets/icons/piggy-bank.svg');
     height: 20%;
@@ -73,6 +84,11 @@ html, body{
 .search{
     width: 60%;
     height: 5%;
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
 }
 .searchInput{
     background-color: rgba(0, 0, 0, 0);
@@ -80,28 +96,51 @@ html, body{
     width: 100%;
     height: 100%;
     text-decoration: underline;
+    font-size: 1.25em;
+}
+.searchSvg{
+    content: url('../../../assets/icons/search.svg');
+    width: 10%;
+    height: 70%;
+    filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(84%) contrast(88%);
 }
 
 .filter{
-    height: 20%;
+    height: 30%;
     width: 80%;
-    display: flex;
-    flex-direction: column;
     background-color: #fff;
     padding-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
     border-radius: 15px;
     margin-bottom: 3%;
+    padding-bottom: 2%;
+    
 }
 
 .filterForm{
     display: flex;
     flex-direction: column;
+    
+}
+.destination{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3%;
+}
+.destinationSvg{
+    content: url('../../../assets/icons/destination.svg');
+    width: 8%;
+    height: 8%;
+    filter: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+    margin-right: 1%;
 }
 .bookingDuration{
     display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
     justify-content: space-between;
+    padding-bottom: 3%;
 }
 .filterForm input[type=submit]{
     background-color: #43acc7;
@@ -110,15 +149,33 @@ html, body{
     width: 90%;
     border-width: 0;
     align-self: center;
-    position:relative;
-    margin-top:10%;
     color:#fff;
+    bottom: 0%;
 }
+.filterForm input[type=submit]:hover{
+    background-color: #3890a7;
+}
+
+.checkin, .checkout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.calendarSvg{
+    content: url('../../../assets/icons/calendar.svg');
+    height: 13%;
+    width: 13%;
+    filter: invert(79%) sepia(5%) saturate(4346%) hue-rotate(160deg) brightness(80%) contrast(83%);
+    margin-right: 1%;
+}
+
 
 .hotelList{
     height: 100%;
-    width: 80%;
+    width: 85%;
     justify-content: space-between;
+    overflow-y: scroll;
 }
 
 .hotelCard{
@@ -155,18 +212,26 @@ html, body{
 .account{
     width: 40%;
     height: 100%;
+    position: relative;
 }
 
 .bgImage{
+    position: absolute;
     content: url('../../../assets/images/home_bg.jpg');
     width: 100%;
     height: 100%;
+    top: 0;
+    z-index: -1;
 }
 
 .accountAction{
+    display: flex;
     position: relative;
-    bottom: 100%;
-    align-self: flex-start;
+    top: 3%;
+    left: 45%;
+    z-index: 2;
+    width: 50%;
+    justify-content: space-between;
 }
 .registerButton{
     background-color: rgba(0, 0, 0, 0);
@@ -175,11 +240,19 @@ html, body{
     font-weight: bolder;
     font-size: 2em;
 }
+.registerButton:hover{
+    color: #bd4512;
+}
+
+
 .loginButton{
-    width: 20%;
+    width: 30%;
     background-color: #43acc7;
     border-width: 0;
     font-size: 2em;
     border-radius: 10px;
     color: #fff;
+}
+.loginButton:hover{
+    background-color: #3890a7;
 }
