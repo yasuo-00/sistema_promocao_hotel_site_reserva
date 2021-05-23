@@ -44,7 +44,7 @@
     position: relative;
     display: flex;
     width: 40%;
-    height: 70%;
+    height: 75%;
     flex-direction: column;
     right: 40%;
     top: 8%;
@@ -92,7 +92,8 @@
 }
 
 .loginButton{
-    border-radius: var(--border-radius-value);
+    border-bottom-left-radius: var(--border-radius-value);
+    border-bottom-right-radius: var(--border-radius-value);
     background-color: #fff;
     border-width: 0;
     color: var(--dark-orange);
