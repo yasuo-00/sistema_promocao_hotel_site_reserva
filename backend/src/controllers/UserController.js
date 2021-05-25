@@ -14,6 +14,9 @@ module.exports={
     async login(request, response){
         response.sendFile('index.html',{root: path.resolve('../frontend/pages/login/')});
     },
+    async logout(request, response){
+        response.sendFile('index.html',{root: path.resolve('../frontend/pages/home/')});
+    },
 
     async register(request, response){
         response.sendFile('index.html',{root: path.resolve('../frontend/pages/register/')});
