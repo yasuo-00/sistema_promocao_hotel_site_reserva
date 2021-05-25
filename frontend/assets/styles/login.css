@@ -1,10 +1,8 @@
-@import url('../global_styles.css');
-
+@import url('./global_styles.css');
 
 .container{
     width: 100%;
     height: 100%;
-
 }
 
 .pageContent{
@@ -15,52 +13,64 @@
 
 .header{
     display: flex;
+    flex-direction: row;
     height: 8%;
     background-color: var(--light-orange);
     color: #fff;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
-    justify-content: space-between;
     top: 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .home{
     display: flex;
     flex-direction: row;
+    width: 10%;
+    align-items: center;
+    align-content: flex-end;
+    color: var(--dark-orange);
+    
+}
+.home:hover{
+    filter: var(--filter-white)
 }
 
 .homeSvg{
-    content: url('../../assets/icons/home.svg');
+    content: url('../icons/home.svg');
+    width: 30%;
+    height: 80%;
+    padding-right: 0.5%;
+    filter: var(--filter-dark-orange);
 }
 
+
 .bgImage{
-    content: url('../../assets/images/login_register_bg.jpg');
+    content: url('../images/login_register_bg.jpg');
     width: 100%;
     height: 100%;
 }
 
-.register{
+.login{
     position: relative;
     display: flex;
     width: 40%;
-    height: 75%;
+    height: 35%;
     flex-direction: column;
-    right: 40%;
-    top: 8%;
+    align-content: center;
+    right: 15%;
+    top: 30%;
     background-color: #fff;
     border-radius: var(--border-radius-value);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
     z-index: 2;
-    padding-bottom: 2%;
 }
 
-.registerTitle{
+.loginTitle{
     align-self: center;
-    color: #f55713;
+    color: var(--dark-orange);
 }
 
-.registerForm{
+.loginForm{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -69,15 +79,15 @@
     width: 65%;
 }
 
-.registerForm input{
+.loginForm input{
     margin-bottom: 20px;
 }
 
-.registerForm label{
+.loginForm label{
     margin-bottom: 10px;
 }
 
-.registerButton{
+.loginButton{
     background-color: var(--blue);
     border-radius: 10px;
     height: 2em;
@@ -87,19 +97,25 @@
     color:#fff;
 }
 
-.registerButton:hover{
+.loginButton:hover{
     background-color: var(--light-blue);
+    border-radius: 10px;
+    height: 2em;
+    border-width: 0;
+    position:relative;
+    margin-top:10%;
+    color:#fff;
 }
 
-.loginButton{
-    border-bottom-left-radius: var(--border-radius-value);
-    border-bottom-right-radius: var(--border-radius-value);
+.registerButton{
     background-color: #fff;
     border-width: 0;
     color: var(--dark-orange);
+    border-bottom-left-radius: var(--border-radius-value);
+    border-bottom-right-radius: var(--border-radius-value);
 }
 
-.loginButton:hover{
+.registerButton:hover{
     background-color: #fff;
     border-width: 0;
     color: var(--lighter-orange);

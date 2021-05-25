@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/styles/login.css">
 </head>
 
 <body>
@@ -18,17 +18,17 @@
             <div class="bgImage"></div>
             <div class="login">
                 <p class="loginTitle">Login</p>
-                <form class="loginForm">
+                <form class="loginForm" action="http://localhost:3333/userHome">
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email" placeholder="Email">
 
                     <label for="password">Senha:</label>
                     <input type="password" id="password" name="password" placeholder="Senha">
-                    <input class="loginButton" type="button" value="LOGIN" onsubmit="">
+                    <input class="loginButton" type="submit" value="LOGIN" onsubmit="">
                 </form>
-                <button class="registerButton">
-                    <p>Não possui conta? Cadastre-se clicando aqui</p>
-                </button>
+                <form action="http://localhost:3333/register">
+                    <input type="submit" class="registerButton" value="Não possui conta? Cadastre-se clicando aqui">
+                </form>
             </div>
         </div>
     </div>

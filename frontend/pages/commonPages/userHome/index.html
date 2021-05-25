@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/styles/userHome.css">
 </head>
 
 <body>
@@ -14,11 +14,11 @@
             <div class="navigation">
                 <div class="navigationOption">
                     <div class="homeSvg"></div>
-                    <p>Home</p>
+                    <a href="http://localhost:3333/">Home</a>
                 </div>
                 <div class="navigationOption">
                     <div class="profileSvg"></div>
-                    <p>Perfil</p>
+                    <a href="http://localhost:3333/profile">Perfil</a>
                 </div>
                 <div class="navigationOption">
                     <div class="salesSvg"></div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="navigationOption">
                     <div class="addSvg"></div>
-                    <p>Adicionar Nova Promoção</p>
+                    <a href="http://localhost:3333/addSales">Adicionar Nova Promoção</a>
                 </div>
             </div>
         </div>
@@ -138,7 +138,9 @@
                         </div>
                     </div>
                 </div>
-                <button class="editProfileButton">EDITAR PERFIL</button>
+                <form action="http://localhost:3333/profile">
+                    <input type="submit" class="editProfileButton" value="EDITAR PERFIL">
+                </form>
             </div>
         </div>
     </div>

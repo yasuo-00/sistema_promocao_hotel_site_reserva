@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/styles/register.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
             <div class="bgImage"></div>
             <div class="register">
                 <p class="registerTitle">Registrar</p>
-                <form class="registerForm">
+                <form class="registerForm" action="http://localhost:3333/login">
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email" placeholder="Email">
 
@@ -39,12 +39,12 @@
                     <input type="text" id="city" name="city" placeholder="Cidade">
                     <label for="url">URL:</label>
                     <input type="text" id="url" name="url" placeholder="URL">
-                    <input class="registerButton" type="button" value="REGISTRAR" onsubmit="">
+                    <input class="registerButton" type="submit" value="REGISTRAR" onsubmit="">
 
                 </form>
-                <button class="loginButton">
-                    <p>Já possui conta? Clique aqui para logar</p>
-                </button>
+                <form action="http://localhost:3333/login">
+                    <input type="submit" class="loginButton" value="Já possui conta? Clique aqui para logar">
+                </form>
             </div>
         </div>
     </div>

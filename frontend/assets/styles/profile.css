@@ -1,4 +1,4 @@
-@import url('../../global_styles.css');
+@import url('./global_styles.css');
 
 
 .pageContent{
@@ -22,52 +22,33 @@
     padding-left: 4%;
 }
 
-.navigation{
-    flex-direction: column;
-    height: 100%;
-    background-color: var(--lighter-orange);
-    color: var(--dark-orange);
-    padding-top: 5%;
-    padding-left: 4%;
-}
-.navigationOption{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.navigationOption:hover{
-    filter: var(--filter-white)
-}
-.navigationOption p{
-    margin-left: 4%;
-}
 
 .homeSvg{
-    content: url('../../../assets/icons/home.svg');
+    content: url('../icons/home.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
 .profileSvg{
-    content: url('../../../assets/icons/profile.svg');
+    content: url('../icons/profile.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
 .salesSvg{
-    content: url('../../../assets/icons/piggy-bank.svg');
+    content: url('../icons/piggy-bank.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
 .hotelSvg{
-    content: url('../../../assets//icons/hotel.svg');
+    content: url('..//icons/hotel.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
 .addSvg{
-    content: url('../../../assets//icons/add.svg');
+    content: url('..//icons/add.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
@@ -101,7 +82,7 @@
     font-size: 1.25em;
 }
 .searchSvg{
-    content: url('../../../assets/icons/search.svg');
+    content: url('../icons/search.svg');
     width: 10%;
     height: 70%;
     filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(84%) contrast(88%);
@@ -154,7 +135,7 @@
 }
 
 .calendarSvg{
-    content: url('../../../assets/icons/calendar.svg');
+    content: url('../icons/calendar.svg');
     height: 13%;
     width: 13%;
     filter: var(--filter-blue);
@@ -188,7 +169,7 @@
     margin-bottom: 5%;
 }
 .hotelImg{
-    content: url('../../../assets/images/hotel.jpg');
+    content: url('../images/hotel.jpg');
     height: 100%;
     width: 50%;
     object-fit: cover;
@@ -244,7 +225,7 @@
 
 .profileImg{
     position: relative;
-    content: url('../../../assets/images/profile_placeholder.jpg');
+    content: url('../images/profile_placeholder.jpg');
     height: 105.8%;
     width: 50%;
     object-fit: cover;

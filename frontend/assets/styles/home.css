@@ -1,4 +1,4 @@
-@import url('../global_styles.css');
+@import url('./global_styles.css');
 
 
 .pageContent{
@@ -22,67 +22,29 @@
     padding-left: 4%;
 }
 
-.navigation{
-    flex-direction: column;
-    height: 100%;
-    background-color: var(--lighter-orange);
-    color: var(--dark-orange);
-    padding-top: 5%;
-    padding-left: 4%;
-}
-.navigationOption{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.navigationOption:hover{
-    filter: var(--filter-white)
-}
-.navigationOption p{
-    margin-left: 4%;
-}
-
 .homeSvg{
-    content: url('../../assets/icons/home.svg');
-    height: var(--dashboard-svg-size);
-    width: var(--dashboard-svg-size);
-    filter: var(--filter-dark-orange);
-}
-.profileSvg{
-    content: url('../../assets/icons/profile.svg');
+    content: url('../icons/home.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
 .salesSvg{
-    content: url('../../assets/icons/piggy-bank.svg');
+    content: url('../icons/piggy-bank.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
 .hotelSvg{
-    content: url('../../assets//icons/hotel.svg');
+    content: url('..//icons/hotel.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
-}
-.addSvg{
-    content: url('../../assets//icons/add.svg');
-    height: var(--dashboard-svg-size);
-    width: var(--dashboard-svg-size);
-    filter: var(--filter-dark-orange);
-}
-
-.mainTitle{
-    color: var(--blue);
-    font-size: 2em;
-    font-weight: bolder;
 }
 
 .mainContent{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     background-color: #e3eaea;
     align-content: center;
     align-items: center;
@@ -107,15 +69,15 @@
     font-size: 1.25em;
 }
 .searchSvg{
-    content: url('../../assets/icons/search.svg');
+    content: url('../icons/search.svg');
     width: 10%;
     height: 70%;
     filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(84%) contrast(88%);
 }
 
 .filter{
-    height: 50%;
-    width: 60%;
+    height: 30%;
+    width: 80%;
     background-color: #fff;
     padding-top: 2%;
     padding-left: 2%;
@@ -123,24 +85,27 @@
     border-radius: var(--border-radius-value);
     margin-bottom: 3%;
     padding-bottom: 2%;
-}
-
-.filterInput{
-    padding-bottom: 2%;
-}
-.filterInput label{
-    padding-right: 1%;
-    font-weight: bolder;
+    
 }
 
 .filterForm{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     
 }
-
-.salesTimeframe{
+.destination{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3%;
+}
+.destinationSvg{
+    content: url('../icons/destination.svg');
+    width: 8%;
+    height: 8%;
+    filter: var(--filter-blue);
+    margin-right: 1%;
+}
+.bookingDuration{
     display: flex;
     align-content: flex-start;
     align-items: flex-start;
@@ -161,14 +126,14 @@
     background-color: var(--light-blue);
 }
 
-.initialDate, .finalDate{
+.checkin, .checkout{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 .calendarSvg{
-    content: url('../../assets/icons/calendar.svg');
+    content: url('../icons/calendar.svg');
     height: 13%;
     width: 13%;
     filter: var(--filter-blue);
@@ -192,7 +157,7 @@
     margin-bottom: 5%;
 }
 .hotelImg{
-    content: url('../../assets/images/hotel.jpg');
+    content: url('../images/hotel.jpg');
     height: 100%;
     width: 50%;
     border-top-left-radius: var(--border-radius-value);
@@ -218,83 +183,46 @@
     width: 40%;
     height: 100%;
     position: relative;
-    background-color: #e3eaea;
 }
 
-.profileCard{
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    height: 60%;
-    width: 80%;
-    margin-top: 20%;
-    border-radius: var(--border-radius-value);
-    padding-top: 1%;
-    padding-left: 3%;
-    padding-bottom: 1%;
-}
-
-.profileImg{
-    position: relative;
-    content: url('../../assets/images/profile_placeholder.jpg');
+.bgImage{
+    position: absolute;
+    content: url('../images/home_bg.jpg');
+    width: 100%;
     height: 100%;
-    width: 103.6%;
-    border-top-left-radius: var(--border-radius-value);
-    border-top-right-radius: var(--border-radius-value);
-    left: -3.7%;
-    top: -3%;
+    top: 0;
+    z-index: -1;
 }
 
-.profileHeader{
+.accountAction{
+    display: flex;
     position: relative;
-    margin-top: 0ch;
-    top: -5%;
+    top: 3%;
+    left: 45%;
+    z-index: 2;
+    width: 50%;
+    justify-content: space-between;
 }
-
-
-.profileHeader p{
-    color: var(--blue);
+.registerButton{
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: var(--dark-orange);
+    font-weight: bolder;
     font-size: 2em;
 }
-.headerSeparator{
-    position: relative;
-    border-top: 3px solid var(--blue);
-    border-radius: var(--border-radius-value);
-    right: 2%;
-    top: -1.5em;
+.registerButton:hover{
+    color: var(--lighter-orange);
 }
 
 
-.profileData{
-    position: relative;
-    top: -2em
-}
-
-.profileProps{
-    display: flex;
-    flex-direction: row;
-}
-.profilePropName{
-    color: #bebebe;
-    margin-right: 1%;
-    font-weight: bolder;
-}
-
-
-.editProfileButton{
-    display: flex;
-    flex-direction: row;
-    border-width: 0;
-    border-radius: var(--border-radius-value);
+.loginButton{
+    width: 30%;
     background-color: var(--blue);
+    border-width: 0;
+    font-size: 2em;
+    border-radius: 10px;
     color: #fff;
-    font-weight: bolder;
-    height: 20%;
-    align-self: flex-end;
-    align-items: center;
-    margin-right: 4%;
 }
-
-.editProfileButton:hover{
+.loginButton:hover{
     background-color: var(--light-blue);
 }
