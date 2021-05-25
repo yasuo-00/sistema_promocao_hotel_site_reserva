@@ -29,10 +29,13 @@
     align-items: center;
     align-content: flex-end;
     color: var(--dark-orange);
-    
 }
 .home:hover{
     filter: var(--filter-white)
+}
+.home a{
+    text-decoration: none;
+    color: var(--dark-orange);
 }
 
 .homeSvg{

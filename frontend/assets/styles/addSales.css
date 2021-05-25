@@ -23,6 +23,7 @@
 }
 
 
+
 .homeSvg{
     content: url('../icons/home.svg');
     height: var(--dashboard-svg-size);
@@ -49,6 +50,12 @@
 }
 .addSvg{
     content: url('..//icons/add.svg');
+    height: var(--dashboard-svg-size);
+    width: var(--dashboard-svg-size);
+    filter: var(--filter-dark-orange);
+}
+.logoutSvg{
+    content: url('..//icons/logout.svg');
     height: var(--dashboard-svg-size);
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);

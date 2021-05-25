@@ -177,6 +177,12 @@
     border-top-left-radius: var(--border-radius-value);
     border-bottom-left-radius: var(--border-radius-value);
 }
+.logoutSvg{
+    content: url('..//icons/logout.svg');
+    height: var(--dashboard-svg-size);
+    width: var(--dashboard-svg-size);
+    filter: var(--filter-dark-orange);
+}
 
 .hotelInfo{
     align-content: center;

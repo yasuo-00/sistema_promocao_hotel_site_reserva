@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const userRoutes = require('./routes/UserRoutes');
 const salesRoutes = require('./routes/SalesRoutes');
+const hotelRoutes = require('./routes/HotelRoutes');
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.use('/assets', express.static(path.resolve('../frontend/assets')))
 
 app.use(userRoutes);
 app.use(salesRoutes);
+app.use(hotelRoutes);
 
 app.listen(3333);
