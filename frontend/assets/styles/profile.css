@@ -53,6 +53,12 @@
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
+.registerSvg{
+    content: url('..//icons/register.svg');
+    height: var(--dashboard-svg-size);
+    width: var(--dashboard-svg-size);
+    filter: var(--filter-dark-orange);
+}
 .logoutSvg{
     content: url('..//icons/logout.svg');
     height: var(--dashboard-svg-size);
@@ -283,15 +289,19 @@
 
 .editProfileButton{
     display: flex;
+    position: relative;
     flex-direction: row;
     border-width: 0;
     border-radius: var(--border-radius-value);
     background-color: var(--blue);
     color: #fff;
     font-weight: bolder;
-    height: 20%;
+    height: 10%;
+    width: 40%;
     align-self: flex-end;
     align-items: center;
+    align-content: center;
+    justify-content: center;
     margin-right: 4%;
 }
 

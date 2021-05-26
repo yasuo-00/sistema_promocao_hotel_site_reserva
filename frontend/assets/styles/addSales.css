@@ -54,6 +54,12 @@
     width: var(--dashboard-svg-size);
     filter: var(--filter-dark-orange);
 }
+.registerSvg{
+    content: url('..//icons/register.svg');
+    height: var(--dashboard-svg-size);
+    width: var(--dashboard-svg-size);
+    filter: var(--filter-dark-orange);
+}
 .logoutSvg{
     content: url('..//icons/logout.svg');
     height: var(--dashboard-svg-size);
