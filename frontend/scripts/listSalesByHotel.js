@@ -1,6 +1,6 @@
-window.addEventListener('load', hotelList)
-function hotelList() {
-    const url = 'http://localhost:3333/sales/listAll';
+window.addEventListener('load', listSalesByHotel)
+function listSalesByHotel() {
+    const url = 'http://localhost:3333/sales/listByHotel';
 
     const options = {
         method: 'GET',

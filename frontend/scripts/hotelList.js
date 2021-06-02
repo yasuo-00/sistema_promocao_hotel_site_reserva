@@ -30,7 +30,7 @@ function hotelList() {
                             </div>
                         </div>
                         `
-                })}`;
+                }).join('')}`;
             } else {
                 alert('Erro ao listar hotéis, tente mais tarde');
             }

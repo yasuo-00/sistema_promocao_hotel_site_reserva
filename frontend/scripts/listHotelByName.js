@@ -36,7 +36,7 @@ function submitQuery() {
                             </div>
                         </div>
                         `
-                })}`;
+                }).join('')}`;
             } else {
                 alert('Erro ao listar hotéis, tente mais tarde');
             }
