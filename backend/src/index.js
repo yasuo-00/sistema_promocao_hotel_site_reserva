@@ -11,9 +11,12 @@ const bookingSiteRoutes = require('./routes/BookingSiteRoutes');
 const app = express();
 
 app.use(cors())
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
 app.use('/assets', express.static(path.resolve('../frontend/assets')))
+app.use('/components', express.static(path.resolve('../frontend/components')))
+app.use('/scripts', express.static(path.resolve('../frontend/scripts')))
 
 app.use(userRoutes);
 app.use(salesRoutes);

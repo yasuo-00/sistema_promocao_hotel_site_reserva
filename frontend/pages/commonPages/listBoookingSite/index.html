@@ -3,37 +3,12 @@
 
 <head>
     <link rel="stylesheet" href="/assets/styles/userHome.css">
+    <script src="/components/sidebar.js"></script>
 </head>
 
 <body>
     <div class="pageContent">
-        <div class="dashboard">
-            <div class="dashboardHeader">
-                <p>Booking Deals</p>
-            </div>
-            <div class="navigation">
-                <div class="navigationOption">
-                    <div class="homeSvg"></div>
-                    <a href="http://localhost:3333/">Home</a>
-                </div>
-                <div class="navigationOption">
-                    <div class="profileSvg"></div>
-                    <a href="http://localhost:3333/profile">Perfil</a>
-                </div>
-                <div class="navigationOption">
-                    <div class="salesSvg"></div>
-                    <p>Promoções</p>
-                </div>
-                <div class="navigationOption">
-                    <div class="hotelSvg"></div>
-                    <p>Hotéis</p>
-                </div>
-                <div class="navigationOption">
-                    <div class="addSvg"></div>
-                    <a href="http://localhost:3333/addSales">Adicionar Nova Promoção</a>
-                </div>
-            </div>
-        </div>
+        <my-sidebar></my-sidebar>
         <div class="mainContent">
             <div class="search">
                 <form>

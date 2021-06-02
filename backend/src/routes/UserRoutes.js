@@ -10,4 +10,6 @@ routes.get('/', userController.home);
 routes.get('/register', userController.register);
 routes.get('/profile', userController.profile);
 
+routes.post('/login', userController.login);
+
 module.exports = routes;

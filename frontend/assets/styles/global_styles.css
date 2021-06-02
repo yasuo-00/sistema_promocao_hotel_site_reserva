@@ -32,25 +32,6 @@ html, body{
     background-color: #e3eaeaea;
 }
 
-.navigation{
-    flex-direction: column;
-    height: 100%;
-    background-color: var(--lighter-orange);
-    color: var(--dark-orange);
-    padding-top: 5%;
-    padding-left: 4%;
-}
-.navigationOption{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 5%;
-}
-.navigationOption:hover{
-    filter: var(--filter-white)
-}
-.navigationOption a{
-    margin-left: 4%;
-    text-decoration: none;
-    color: var(--dark-orange);
+my-sidebar{
+    width: 10%;
 }
