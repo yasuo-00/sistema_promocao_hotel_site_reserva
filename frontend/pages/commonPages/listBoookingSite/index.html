@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/assets/styles/userHome.css">
+    <link rel="stylesheet" href="/assets/styles/bookingSite.css">
     <script src="/components/sidebar.js"></script>
 </head>
 
@@ -12,7 +12,7 @@
         <div class="mainContent">
             <div class="search">
                 <form>
-                    <input class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
+                    <input class="searchInput" type="text" placeholder="Pesquisar site de reservas por url">
 
                 </form>
                 <div class="searchSvg"></div>
@@ -24,11 +24,11 @@
                     <div class="salesTimeframe">
                         <div class="initialDate">
                             <div class="calendarSvg"></div>
-                            <input type="text" placeholder="Data inicial">
+                            <input type="date" placeholder="Data inicial">
                         </div>
                         <div class="finalDate">
                             <div class="calendarSvg"></div>
-                            <input type="text" placeholder="Data final">
+                            <input type="date" placeholder="Data final">
                         </div>
                     </div>
                     <input type="submit" value="PESQUISAR">
@@ -37,46 +37,15 @@
             <div class="listTitle">
                 <p>lISTA DE SITES DE RESERVA</p>
             </div>
-            <div class="hotelList">
-                <div class="hotelCard">
-                    <div class="hotelImg"></div>
-                    <div class="hotelInfo">
-                        <p class="hotelName">
-                            NOME HOTEL
+            <div class="bookingSiteList">
+                <div class="bookingSiteCard">
+                    <div class="bookingSiteImg"></div>
+                    <div class="bookingSiteInfo">
+                        <p class="bookingSiteName">
+                            NOME bookingSite
                         </p>
-                        <p class="hotelDescription">
+                        <p class="bookingSiteDescription">
                             DESCRIÇÃO
-                        </p>
-                        <p class="hotelPrice">
-                            R$ XX,XX por noite
-                        </p>
-                    </div>
-                </div>
-                <div class="hotelCard">
-                    <div class="hotelImg"></div>
-                    <div class="hotelInfo">
-                        <p class="hotelName">
-                            NOME HOTEL
-                        </p>
-                        <p class="hotelDescription">
-                            DESCRIÇÃO
-                        </p>
-                        <p class="hotelPrice">
-                            R$ XX,XX por noite
-                        </p>
-                    </div>
-                </div>
-                <div class="hotelCard">
-                    <div class="hotelImg"></div>
-                    <div class="hotelInfo">
-                        <p class="hotelName">
-                            NOME HOTEL
-                        </p>
-                        <p class="hotelDescription">
-                            DESCRIÇÃO
-                        </p>
-                        <p class="hotelPrice">
-                            R$ XX,XX por noite
                         </p>
                     </div>
                 </div>
@@ -93,7 +62,7 @@
                     <div class="profileData">
                         <div class="profileProps">
                             <p class="profilePropName">Nome:</p>
-                            <p class="profilePropValue">Nome Hotel/site/admin</p>
+                            <p class="profilePropValue">Nome bookingSite/site/admin</p>
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">URL:</p>
@@ -101,15 +70,15 @@
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">CNPJ</p>
-                            <p class="profilePropValue">CNPJ Hotel</p>
+                            <p class="profilePropValue">CNPJ bookingSite</p>
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Cidade:</p>
-                            <p class="profilePropValue">Cidade Hotel</p>
+                            <p class="profilePropValue">Cidade bookingSite</p>
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Descrição:</p>
-                            <p class="profilePropValue">Descrição Hotel</p>
+                            <p class="profilePropValue">Descrição bookingSite</p>
                         </div>
                     </div>
                 </div>

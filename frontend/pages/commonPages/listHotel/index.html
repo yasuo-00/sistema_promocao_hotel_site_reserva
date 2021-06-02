@@ -4,32 +4,30 @@
 <head>
     <link rel="stylesheet" href="/assets/styles/hotelList.css">
     <script src="/components/sidebar.js"></script>
-    <script src="/components/hotelList.js"></script>
-</head>
+    <script src="/scripts/hotelList.js"></script>
+    <script src="/scripts/listHotelByName.js"></script>
+</head> 
 
 <body>
     <div class="pageContent">
         <my-sidebar></my-sidebar>
         <div class="mainContent">
             <div class="search">
-                <form>
-                    <input class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
-
+                <form id="searchForm">
+                    <input id="searchInput" class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
                 </form>
                 <div class="searchSvg"></div>
-
-
             </div>
             <div class="filter">
                 <form class="filterForm">
                     <div class="salesTimeframe">
                         <div class="initialDate">
                             <div class="calendarSvg"></div>
-                            <input type="text" placeholder="Data inicial">
+                            <input type="date" placeholder="Data inicial">
                         </div>
                         <div class="finalDate">
                             <div class="calendarSvg"></div>
-                            <input type="text" placeholder="Data final">
+                            <input type="date" placeholder="Data final">
                         </div>
                     </div>
                     <input type="submit" value="PESQUISAR">
@@ -38,49 +36,7 @@
             <div class="listTitle">
                 <p>LISTA DE HOTÉIS</p>
             </div>
-            <div class="hotelList">
-                <div class="hotelCard">
-                    <div class="hotelImg"></div>
-                    <div class="hotelInfo">
-                        <p class="hotelName">
-                            NOME HOTEL
-                        </p>
-                        <p class="hotelDescription">
-                            DESCRIÇÃO
-                        </p>
-                        <p class="hotelPrice">
-                            R$ XX,XX por noite
-                        </p>
-                    </div>
-                </div>
-                <div class="hotelCard">
-                    <div class="hotelImg"></div>
-                    <div class="hotelInfo">
-                        <p class="hotelName">
-                            NOME HOTEL
-                        </p>
-                        <p class="hotelDescription">
-                            DESCRIÇÃO
-                        </p>
-                        <p class="hotelPrice">
-                            R$ XX,XX por noite
-                        </p>
-                    </div>
-                </div>
-                <div class="hotelCard">
-                    <div class="hotelImg"></div>
-                    <div class="hotelInfo">
-                        <p class="hotelName">
-                            NOME HOTEL
-                        </p>
-                        <p class="hotelDescription">
-                            DESCRIÇÃO
-                        </p>
-                        <p class="hotelPrice">
-                            R$ XX,XX por noite
-                        </p>
-                    </div>
-                </div>
+            <div id="hotelList" class="hotelList">
             </div>
         </div>
     </div>
