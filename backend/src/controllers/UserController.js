@@ -20,10 +20,10 @@ module.exports = {
                 //returns the user data, if exists on database
                 const user = await connection('user')
                                 .where('email', email)
-                                .select('id_user', 'email', 'password', 'type').first();
+                                .select('id_user', 'email','password', 'type').first();
                 if (user!== undefined){
                     if(user.password===password){
-                        return response.status(200).json({ message: 'Login efetuado' });
+                        return response.status(200).json({ user});
                     }
                     return response.status(401).json({error: 'Email or password is wrong'})
                 }

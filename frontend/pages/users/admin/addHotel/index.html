@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="/assets/styles/addSales.css">
+    <script src="/scripts/registerHotel.js"></script>
+    <script src="/scripts/isAuthenticated.js"></script>
 </head>
 
 <body>
@@ -15,21 +17,29 @@
             </div>
             <div class="filter">
                 <form class="filterForm">
-                    <div class="filterInput">
-                        <label for="hotelInput">Hotel:</label>
-                        <input type="text" placeholder="Hotel">
+                    <div id="registerForm" class="filterInput">
+                        <label for="hotelInput">Nome do Hotel:</label>
+                        <input id="hotelName" type="text" placeholder="Hotel">
                     </div>
                     <div class="filterInput">
                         <label for="hotelInput">CNPJ:</label>
-                        <input type="text" placeholder="CNPJ">
+                        <input id="cnpj" type="text" placeholder="CNPJ">
+                    </div>
+                    <div class="filterInput">
+                        <label for="hotelInput">Cidade:</label>
+                        <input id="city" type="text" placeholder="Cidade">
                     </div>
                     <div class="filterInput">
                         <label for="hotelInput">Email:</label>
-                        <input type="text" placeholder="Email">
+                        <input id="email" type="text" placeholder="Email">
                     </div>
                     <div class="filterInput">
                         <label for="bookingSiteInput">Senha:</label>
-                        <input type="password" placeholder="Senha">
+                        <input id="password" type="password" placeholder="Senha">
+                    </div>
+                    <div class="filterInput">
+                        <label for="hotelInput">Preço da diária:</label>
+                        <input id="dailyRate" type="text" placeholder="Diária">
                     </div>
                     <input type="submit" value="REGISTRAR">
                 </form>

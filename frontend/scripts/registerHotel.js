@@ -1,7 +1,7 @@
 window.addEventListener('load', registerHotel)
 
 function registerHotel() {
-    const form = document.getElementById('loginForm');
+    const form = document.getElementById('registerForm');
     form.addEventListener('submit', function () { submitHotelRegister() })
 }
 

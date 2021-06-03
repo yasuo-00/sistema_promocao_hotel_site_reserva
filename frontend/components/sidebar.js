@@ -11,6 +11,10 @@ class Sidebar extends HTMLElement {
     }
 
     render() {
+        var script = document.createElement('script');
+        script.src='/scripts/logout.js';
+        document.head.appendChild(script);
+        
         this.shadow.innerHTML = `
         <style>
         @import url('/assets/styles/sidebar.css');
@@ -50,7 +54,7 @@ class Sidebar extends HTMLElement {
                 </div>
                 <div class="navigationOption">
                     <div class="logoutSvg"></div>
-                    <a href="http://localhost:3333/">Sair</a>
+                    <a clas="logout" id="logout" href="#">Sair</a>
                 </div>
             </div>
         </div>
