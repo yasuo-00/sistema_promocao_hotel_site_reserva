@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="/assets/styles/profile.css">
     <script src="/components/sidebar.js"></script>
+    <script src="/scripts/renderProfile.js"></script>
 </head>
 
 <body>
@@ -18,27 +19,7 @@
                         <p>Meu Perfil</p>
                         <hr class="headerSeparator">
                     </div>
-                    <form class="profileData">
-                        <div class="profileProps">
-                            <p class="profilePropName">Nome:</p>
-                            <p class="profilePropValue">Nome Hotel/site/admin</p>
-                        </div>
-                        <div class="profileProps">
-                            <p class="profilePropName">URL:</p>
-                            <p class="profilePropValue">URL site</p>
-                        </div>
-                        <div class="profileProps">
-                            <p class="profilePropName">CNPJ</p>
-                            <p class="profilePropValue">CNPJ Hotel</p>
-                        </div>
-                        <div class="profileProps">
-                            <p class="profilePropName">Cidade:</p>
-                            <p class="profilePropValue">Cidade Hotel</p>
-                        </div>
-                        <div class="profileProps">
-                            <p class="profilePropName">Descrição:</p>
-                            <p class="profilePropValue">Descrição Hotel</p>
-                        </div>
+                    <form id="profileForm" class="profileData">
                     </form>
                     <button class="editProfileButton">EDITAR PERFIL</button>
                 </div>

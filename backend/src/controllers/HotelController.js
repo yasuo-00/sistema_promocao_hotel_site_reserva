@@ -63,5 +63,19 @@ module.exports = {
         } catch (error) {
             return response.status(500).json({ error: error });
         }
+    },
+
+    async getHotelById(request, response){
+        const { id } = request.body;
+        try {
+            const hotel= await connection('user')
+                .where('hotel.id_user', id)
+                .join('hotel', 'user.id_user', '=', 'hotel.id_user')
+                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate')
+                .first();
+            return response.status(200).json({ hotel});
+        } catch (error) {
+            return response.status(500).json({ error: error });
+        }
     }
 }

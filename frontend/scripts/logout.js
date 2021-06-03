@@ -2,6 +2,7 @@
 window.addEventListener('load', logoutButton)
 
 function logoutButton(){
+    //gets logout <a> tag from sidebar
     const button = document.querySelector('my-sidebar').shadowRoot.getElementById('logout');
     button.addEventListener('click',function(){logout()})
     

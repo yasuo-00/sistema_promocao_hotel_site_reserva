@@ -7,6 +7,7 @@ routes.get('/hotelList', hotelController.list);
 routes.get('/hotel/listAll', hotelController.listAll);
 routes.get('/hotel/listByName', hotelController.listByName); 
 routes.get('/addHotel', hotelController.create);
+routes.post('/hotel/getById', hotelController.getHotelById);
 
 routes.post('/hotel/register', hotelController.register);
 

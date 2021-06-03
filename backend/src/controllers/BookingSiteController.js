@@ -1,3 +1,4 @@
+const { request, response } = require('express');
 const path = require('path');
 const connection = require('../database/connection');
 
@@ -44,6 +45,21 @@ module.exports = {
                 .join('user', 'user.id_user', '=', 'booking_site.id_user')
                 .select('booking_site.id_user', 'booking_site.name', 'user.email', 'booking_site.url');
             return response.status(200).json({ bookingSiteList });
+        } catch (error) {
+            return response.status(500).json({ error: error });
+        }
+    },
+
+    async getBookingSiteById(request, response){
+        const {id} = request.body;
+        console.log(request.body);
+        try {
+            const bookingSite = await connection('booking_site')
+                .where('booking_site.id_user', id)
+                .join('user', 'user.id_user', '=', 'booking_site.id_user')
+                .select('booking_site.id_user', 'booking_site.name', 'user.email', 'booking_site.url')
+                .first();
+            return response.status(200).json({ bookingSite });
         } catch (error) {
             return response.status(500).json({ error: error });
         }
