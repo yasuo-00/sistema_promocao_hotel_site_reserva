@@ -10,4 +10,6 @@ routes.post('/bookingSite/getById', bookingSiteController.getBookingSiteById);
 
 routes.post('/bookingSite/register', bookingSiteController.register);
 
+routes.put('/bookingSite/edit', bookingSiteController.edit);
+
 module.exports = routes;

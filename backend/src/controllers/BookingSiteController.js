@@ -63,5 +63,25 @@ module.exports = {
         } catch (error) {
             return response.status(500).json({ error: error });
         }
+    },
+
+    async edit(request, response){
+        const {id_user, email, name, url} = request.body;
+        try{
+            await connection('user')
+                .where('id_user', id_user)
+                .update({
+                    email: email,
+                })
+            await connection('booking_site')
+                    .where('id_user', id_user)
+                    .update({
+                        name: name,
+                        url:url
+                    })
+            return response.status(200).send();
+        }catch (error){
+            return response.status(500).json({error: 'Erro ao editar perfil, tente mais tarde'});
+        }
     }
 }

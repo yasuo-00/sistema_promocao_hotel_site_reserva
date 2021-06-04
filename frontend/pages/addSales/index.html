@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="/assets/styles/addSales.css">
     <script src="/components/sidebar.js"></script>
     <script src="/scripts/isAuthenticated.js"></script>
+    <script src="/scripts/hotelSelect.js"></script>
+    <script src="/scripts/bookingSiteSelect.js"></script>
+    <script src="/scripts/addSales.js"></script>
 </head>
 
 <body>
@@ -14,31 +17,27 @@
             <div class="mainTitle">
                 <p>Adicionar Nova Promoção</p>
             </div>
-            <div class="filter">
-                <form class="filterForm">
-                    <div class="filterInput">
-                        <label for="hotelInput">Hotel:</label>
-                        <input type="text" placeholder="Hotel">
+            <div class="sales">
+                <form id="salesForm" class="salesForm">
+                    <div id="hotelSelect" class="salesInput">
                     </div>
-                    <div class="filterInput">
-                        <label for="bookingSiteInput">Site de Reservas:</label>
-                        <input type="text" placeholder="Site de Reservas">
+                    <div id="bookingSiteSelect" class="salesInput">
                     </div>
-                    <div class="filterInput">
+                    <div class="salesInput">
                         <div class="salesTimeframe">
                             <div class="initialDate">
                                 <div class="calendarSvg"></div>
-                                <input type="date" placeholder="Data inicial">
+                                <input id="initialDate" type="date" placeholder="Data inicial">
                             </div>
                             <div class="finalDate">
                                 <div class="calendarSvg"></div>
-                                <input type="date" placeholder="Data final">
+                                <input id="finalDate"  type="date" placeholder="Data final">
                             </div>
                         </div>
                     </div>
-                    <div class="filterInput">
+                    <div class="salesInput">
                         <label for="priceInput">Preço:</label>
-                        <input type="number" id="precoInput" name="precoInput" placeholder="Preço">
+                        <input type="number" id="priceInput" name="priceInput" placeholder="Preço">
                     </div>
                     <input type="submit" value="ADICIONAR">
                 </form>

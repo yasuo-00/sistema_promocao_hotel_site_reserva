@@ -12,4 +12,6 @@ routes.get('/profile', userController.profile);
 
 routes.post('/login', userController.login);
 
+routes.put('/editUser', userController.edit);
+
 module.exports = routes;

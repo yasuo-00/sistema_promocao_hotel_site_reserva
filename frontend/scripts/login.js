@@ -22,7 +22,7 @@ function submitLogin() {
         .then(res => res.json().then(jsonData=>({status: res.status, data: jsonData })))
         .then(data =>{  
                 if(data.status==200){
-                    const user = data.data;
+                    const user = data.data.user;
                     sessionStorage.setItem('user', JSON.stringify(user));
                     window.location.replace('http://localhost:3333/userHome');
                 }else{

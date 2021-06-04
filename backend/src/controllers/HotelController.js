@@ -65,17 +65,37 @@ module.exports = {
         }
     },
 
-    async getHotelById(request, response){
+    async getHotelById(request, response) {
         const { id } = request.body;
         try {
-            const hotel= await connection('user')
+            const hotel = await connection('user')
                 .where('hotel.id_user', id)
                 .join('hotel', 'user.id_user', '=', 'hotel.id_user')
                 .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate')
                 .first();
-            return response.status(200).json({ hotel});
+            return response.status(200).json({ hotel });
         } catch (error) {
             return response.status(500).json({ error: error });
+        }
+    },
+
+    async edit(request, response) {
+        const { id_user, email, name, city, description } = request.body;
+        try {
+            await connection('user')
+                .where('id_user', id_user)
+                .update({
+                    email: email
+                })
+            await connection('hotel')
+                .where('id_user', id_user)
+                .update({
+                    name: name,
+                    city: city
+                })
+            return response.status(200).send();
+        } catch (error) {
+            return response.status(500).json({ error: 'Erro ao editar perfil, tente mais tarde' });
         }
     }
 }

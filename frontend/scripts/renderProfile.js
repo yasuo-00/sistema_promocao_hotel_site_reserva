@@ -1,7 +1,7 @@
 window.addEventListener('load', renderProfile);
 
 function renderProfile() {
-    const user = JSON.parse(sessionStorage.getItem('user')).user;
+    const user = JSON.parse(sessionStorage.getItem('user'));
     console.log(user.type);
     if (user.type === 'hotel') {
         const url = 'http://localhost:3333/hotel/getById';
@@ -21,7 +21,7 @@ function renderProfile() {
             document.getElementById('profileForm').innerHTML=`
                         <div class="profileProps">
                             <p class="profilePropName">Nome:</p>
-                            <input class="profilePropValue" value="${data.data.hotel.name}">
+                            <input id="name" class="profilePropValue" value="${data.data.hotel.name}">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">CNPJ:</p>
@@ -29,15 +29,15 @@ function renderProfile() {
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Email:</p>
-                            <input class="profilePropValue" value="${data.data.hotel.email}">
+                            <input id="email" class="profilePropValue" value="${data.data.hotel.email}">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Cidade:</p>
-                            <input class="profilePropValue" value="${data.data.hotel.city}">
+                            <input id="city" class="profilePropValue" value="${data.data.hotel.city}">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Descrição:</p>
-                            <input class="profilePropValue" value="Descrição hotel">
+                            <input id="description" class="profilePropValue" value="Descrição hotel">
                         </div>
             `
         });
@@ -58,15 +58,15 @@ function renderProfile() {
             document.getElementById('profileForm').innerHTML=`
                         <div class="profileProps">
                             <p class="profilePropName">Nome:</p>
-                            <input class="profilePropValue" value="${data.data.bookingSite.name}">
+                            <input id="name" class="profilePropValue" value="${data.data.bookingSite.name}">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">URL</p>
-                            <p class="profilePropValue">${data.data.bookingSite.url}</p>
+                            <input id="url" class="profilePropValue" value="${data.data.bookingSite.url}">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Email:</p>
-                            <input class="profilePropValue" value="${data.data.bookingSite.email}">
+                            <input id="email" class="profilePropValue" value="${data.data.bookingSite.email}">
                         </div>
             `
         });
@@ -75,7 +75,7 @@ function renderProfile() {
         document.getElementById('profileForm').innerHTML=`
                         <div class="profileProps">
                             <p class="profilePropName">Email:</p>
-                            <input class="profilePropValue" value="${user.email}">
+                            <input id="email" class="profilePropValue" value="${user.email}">
                         </div>
         `
     } else {

@@ -45,5 +45,20 @@ module.exports = {
 
     async profile(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/commonPages/profile/') });
+    },
+
+    async edit(request, response){
+        console.log('here');
+        const {id_user, email} = request.body;
+        console.log(request.body);
+        try{
+            await connection('user')
+                .where('id_user', id_user)
+                .update({email: email})
+            return response.status(200).send();
+        }catch (error){
+            return response.status(500).json({error: 'Erro ao editar perfil, tente mais tarde'});
+        }
     }
+    
 }

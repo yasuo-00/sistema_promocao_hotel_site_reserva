@@ -46,7 +46,7 @@
     filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(84%) contrast(88%);
 }
 
-.filter{
+.sales{
     height: 50%;
     width: 60%;
     background-color: #fff;
@@ -58,15 +58,15 @@
     padding-bottom: 2%;
 }
 
-.filterInput{
+.salesInput{
     padding-bottom: 2%;
 }
-.filterInput label{
+.salesInput label{
     padding-right: 1%;
     font-weight: bolder;
 }
 
-.filterForm{
+.salesForm{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -80,7 +80,7 @@
     justify-content: space-between;
     padding-bottom: 3%;
 }
-.filterForm input[type=submit]{
+.salesForm input[type=submit]{
     background-color: var(--blue);
     border-radius: 10px;
     height: 2em;
@@ -90,7 +90,7 @@
     color:#fff;
     bottom: 0%;
 }
-.filterForm input[type=submit]:hover{
+.salesForm input[type=submit]:hover{
     background-color: var(--light-blue);
 }
 

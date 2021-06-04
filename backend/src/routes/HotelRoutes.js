@@ -11,4 +11,6 @@ routes.post('/hotel/getById', hotelController.getHotelById);
 
 routes.post('/hotel/register', hotelController.register);
 
+routes.put('/hotel/edit', hotelController.edit);
+
 module.exports = routes;
