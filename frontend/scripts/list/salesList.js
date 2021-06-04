@@ -1,11 +1,42 @@
-window.addEventListener('load', hotelList)
-function hotelList() {
-    const url = 'http://localhost:3333/sales/listAll';
+window.addEventListener('load', salesList)
 
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
+function salesList() {
+    if (sessionStorage.getItem('user')) {
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        switch (user.type) {
+            case 'admin':
+                renderSalesList('http://localhost:3333/sales/listAll');
+                break;
+            case 'hotel':
+                renderSalesList('http://localhost:3333/sales/listByHotel', { id_hotel: user.id_user }, 'POST');
+                break;
+            case 'booking_site':
+                renderSalesList('http://localhost:3333/sales/listByBookingSite', { id_booking_site: user.id_user }, 'POST');
+                break;
+            default:
+                renderSalesList('http://localhost:3333/sales/listAll');
+        }
+    } else {
+        renderSalesList('http://localhost:3333/sales/listAll');
+    }
+}
+
+function renderSalesList(url, data = { default: 0 }, method = 'GET') {
+    let options;
+    if (method === 'GET') {
+        options = {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+    } else {
+        options = {
+            method: method,
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }
     }
     fetch(url, options)
@@ -52,5 +83,5 @@ function hotelList() {
 
 function formatDate(date) {
     const formattedDate = new Date(date);
-    return formattedDate.getDate() + '/' + (formattedDate.getMonth()+1)+'/' +formattedDate.getFullYear();
+    return formattedDate.getDate() + '/' + (formattedDate.getMonth() + 1) + '/' + formattedDate.getFullYear();
 }

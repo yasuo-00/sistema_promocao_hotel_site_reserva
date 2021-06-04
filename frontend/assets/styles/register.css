@@ -84,6 +84,13 @@
     width: 65%;
 }
 
+.accountFields{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
 .registerForm input{
     margin-bottom: 20px;
 }

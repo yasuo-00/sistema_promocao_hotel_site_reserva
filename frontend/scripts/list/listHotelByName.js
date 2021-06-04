@@ -7,7 +7,7 @@ function listHotelByName() {
 function submitQuery() {
     const url = 'http://localhost:3333/hotel/listByName';
     const options = {
-        method: 'GET',
+        method: 'POST',
         body: JSON.stringify({query: document.getElementById('searchInput').value}),
         headers: {
             'Content-Type': 'application/json'

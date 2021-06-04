@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="/assets/styles/register.css">
+    <script src="/scripts/render/renderRegisterForm.js"></script>
 </head>
 
 <body>
@@ -26,19 +27,13 @@
                     <input type="password" id="password" name="password" placeholder="Senha">
                     <label for="confirmPassword">Confirmar Senha:</label>
                     <input type="confirmPassword" id="confirmPassword" name="confirmPassword" placeholder="Senha">
-                    <p>Tipo:</p>
-                    <div>
-                        <input type="checkbox" id="hotel" name="hotel">
-                        <label for="hotel">Hotel</label>
-                        <input type="checkbox" id="bookingSite" name="bookingSite">
-                        <label for="bookingSite">Site de Reservas</label>
+                    <label for="accountType">Escolha seu tipo:</label>
+                    <select id="accountType">
+                        <option value="hotel">Hotel</option>
+                        <option value="booking_site">Site de Reservas</option>
+                    </select>
+                    <div id="accountFields" class="accountFields">
                     </div>
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ">
-                    <label for="city">Cidade:</label>
-                    <input type="text" id="city" name="city" placeholder="Cidade">
-                    <label for="url">URL:</label>
-                    <input type="text" id="url" name="url" placeholder="URL">
                     <input class="registerButton" type="submit" value="REGISTRAR" onsubmit="">
 
                 </form>
