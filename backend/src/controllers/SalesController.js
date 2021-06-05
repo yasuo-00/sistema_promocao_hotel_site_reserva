@@ -3,6 +3,7 @@ const connection = require('../database/connection');
 
 module.exports = {
 
+    //adiciona promocao
     async addSales(request, response) {
         if (request.method === 'POST') {
             const { booking_site_id, hotel_id, price, initial_date, final_date } = request.body;
@@ -24,6 +25,7 @@ module.exports = {
         }
     },
 
+    //lista todas as promocoes
     async listAll(request, response) {
         try {
             const salesList = await connection('sales')
@@ -37,6 +39,7 @@ module.exports = {
         }
     },
 
+    //lista promocoes por hotel
     async listByHotel(request, response) {
         const { id_hotel } = request.body;
         try {
@@ -52,6 +55,7 @@ module.exports = {
         }
     },
 
+    //lista promocoes pelo nome do hotel
     async listByHotelName(request, response) {
         const { hotel_name } = request.body;
         try {
@@ -67,6 +71,7 @@ module.exports = {
         }
     },
 
+    //lista promocoes pelo site de reserva
     async listByBookingSite(request, response) {
         const { id_booking_site } = request.body;
         try {

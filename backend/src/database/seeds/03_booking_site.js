@@ -6,12 +6,10 @@ exports.seed = function (knex) {
         return knex('booking_site').insert([
             {
                 id_user:5,
-                name:'Trivago',
                 url:'trivago.com.br'
             },
             {
                 id_user:6,
-                name:'Hotel Urbano',
                 url:'hotelurbano.com.br'
             }
         ]);

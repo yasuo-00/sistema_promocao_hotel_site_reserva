@@ -23,7 +23,7 @@
                     </div>
                     <div class="filterInput">
                         <label for="hotelInput">CNPJ:</label>
-                        <input id="cnpj" type="text" placeholder="CNPJ">
+                        <input id="cnpj" type="text" placeholder="CNPJ" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}\/[0]{3}[1-2]-[0-9]" title="Formato de CNPJ incorreto (XX.XXX.XXX/000X-XXX)" >
                     </div>
                     <div class="filterInput">
                         <label for="hotelInput">Cidade:</label>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="filterInput">
                         <label for="hotelInput">Email:</label>
-                        <input id="email" type="text" placeholder="Email">
+                        <input id="email" type="text" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto">
                     </div>
                     <div class="filterInput">
                         <label for="bookingSiteInput">Senha:</label>

@@ -1,5 +1,7 @@
 window.addEventListener('load', bookingSiteSelect);
 
+//renderiza os sites de reserva cadastrados como uma lista de selecoes
+//usado para adicionar promocao
 function bookingSiteSelect(){
     const url = 'http://localhost:3333/bookingSite/listAll';
     const options = {
@@ -17,7 +19,7 @@ function bookingSiteSelect(){
                         <select name="bookingSite" id="bookingSite">
                         ${data.data.bookingSiteList.map(function (bookingSite) {
                             return `
-                            <option value="${bookingSite.id_user}">${bookingSite.name}</option>
+                            <option value="${bookingSite.id_user}">${bookingSite.url}</option>
                             `
                             })
                         }

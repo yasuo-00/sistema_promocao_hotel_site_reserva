@@ -6,11 +6,10 @@ function registerBookingSite() {
 }
 
 function submitBookingSiteRegister() {
-    const url = 'http://localhost:3333/registerBookingSite';
+    const url = 'http://localhost:3333/bookingSite/register';
     const data = {
         email: document.getElementById('email').value,
         password: document.getElementById('password').value,
-        name: document.getElementById('bookingSiteName').value,
         url: document.getElementById('url').value,
 
     }

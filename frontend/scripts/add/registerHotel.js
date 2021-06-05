@@ -6,7 +6,7 @@ function registerHotel() {
 }
 
 function submitHotelRegister() {
-    const url = 'http://localhost:3333/registerHotel';
+    const url = 'http://localhost:3333/hotel/register';
     const data = {
         email: document.getElementById('email').value,
         password: document.getElementById('password').value,

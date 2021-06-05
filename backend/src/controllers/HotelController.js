@@ -3,11 +3,12 @@ const path = require('path');
 const connection = require('../database/connection');
 
 module.exports = {
-
+    //redireciona para pagina de criacao de hotel
     async create(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/users/admin/addHotel') });
     },
 
+    //adiciona um novo hotel
     async register(request, response) {
         const { name, email, password, cnpj, city, daily_rate } = request.body;
         try {
@@ -37,10 +38,12 @@ module.exports = {
         }
     },
 
+    //redireciona para pagina de listagem de hoteis
     async list(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/commonPages/listHotel/') });
     },
 
+    //lista todos os hoteis
     async listAll(request, response) {
         try {
             const hotelList = await connection('hotel')
@@ -52,6 +55,7 @@ module.exports = {
         }
     },
 
+    //lista hoteis pelo nome
     async listByName(request, response) {
         const { query } = request.body;
         try {
@@ -65,6 +69,7 @@ module.exports = {
         }
     },
 
+    //retorna hotel pelo id
     async getHotelById(request, response) {
         const { id } = request.body;
         try {
@@ -79,6 +84,7 @@ module.exports = {
         }
     },
 
+    //edita campos do hotel
     async edit(request, response) {
         const { id_user, email, name, city, description } = request.body;
         try {

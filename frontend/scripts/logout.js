@@ -8,6 +8,7 @@ function logoutButton(){
     
 }
 
+//efetua o logout
 function logout(){
     sessionStorage.removeItem('user');
     window.location.replace('http://localhost:3333/');

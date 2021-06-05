@@ -1,5 +1,7 @@
 window.addEventListener('load', hotelSelect);
 
+//renderiza os hoteis cadastrados como uma lista de selecoes
+//usado para adicionar promocao
 function hotelSelect(){
     const url = 'http://localhost:3333/hotel/listAll';
     const options = {

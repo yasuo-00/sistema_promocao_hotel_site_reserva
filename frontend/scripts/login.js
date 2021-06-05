@@ -5,6 +5,7 @@ function login() {
     form.addEventListener('submit', function (){submitLogin()})
 }
 
+//efetua o login
 function submitLogin() {
     const url = 'http://localhost:3333/login';
     const data = {

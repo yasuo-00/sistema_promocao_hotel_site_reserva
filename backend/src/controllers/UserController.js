@@ -3,15 +3,17 @@ const path = require('path');
 const connection = require('../database/connection');
 
 module.exports = {
-
+    //redireciona para pagina home do usuario logado
     async userHome(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/commonPages/userHome/') });
     },
 
+    //redireciona para home (sem login)
     async home(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/home/') });
     },
 
+    //funcao de logar usuario
     async login(request, response) {
         if (request.method === 'POST') {
             const {email, password} = request.body;
@@ -35,18 +37,23 @@ module.exports = {
             response.sendFile('index.html', { root: path.resolve('../frontend/pages/login/') });
         }
     },
+
+    //redireciona usuario logado para pagina home  (sem login)
     async logout(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/home/') });
     },
-
+    
+    //redireciona para pagina de cadastro
     async register(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/register/') });
     },
 
+    //redireciona para pagina de perfil do usuario
     async profile(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/commonPages/profile/') });
     },
 
+    //edita campos do usuario
     async edit(request, response){
         console.log('here');
         const {id_user, email} = request.body;

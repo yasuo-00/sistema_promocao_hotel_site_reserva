@@ -18,20 +18,12 @@
             <div class="filter">
                 <form id="registerForm" class="filterForm">
                     <div class="filterInput">
-                        <label for="bookingSiteInput">Site de Reservas:</label>
-                        <input type="text" placeholder="Site de Reservas">
-                    </div>
-                    <div class="filterInput">
-                        <label for="bookingSiteInput">Nome do site:</label>
-                        <input id="bookingSiteName" type="text" placeholder="Nome">
-                    </div>
-                    <div class="filterInput">
                         <label for="bookingSiteInput">URL do site:</label>
                         <input id="url" type="text" placeholder="URL">
                     </div>
                     <div class="filterInput">
                         <label for="bookingSiteInput">Email:</label>
-                        <input id="email" type="text" placeholder="Email">
+                        <input id="email" type="text" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto">
                     </div>
                     <div class="filterInput">
                         <label for="bookingSiteInput">Senha:</label>

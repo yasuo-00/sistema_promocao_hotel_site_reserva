@@ -3,11 +3,12 @@ const path = require('path');
 const connection = require('../database/connection');
 
 module.exports = {
-
+    //redireciona para pagina de adicionar site de reserva
     async create(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/users/admin/addBookingSite/') });
     },
 
+    //funcao de criacao de um novo site de reserva
     async register(request, response) {
         const { name, email, password, url } = request.body;
         try {
@@ -35,21 +36,24 @@ module.exports = {
         }
     },
 
+    //redireciona para a pagina de listagem de site de reserva
     async list(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/commonPages/listBookingSite/') });
     },
 
+    //lista todos os sites de reserva
     async listAll(request, response) {
         try {
             const bookingSiteList = await connection('booking_site')
                 .join('user', 'user.id_user', '=', 'booking_site.id_user')
-                .select('booking_site.id_user', 'booking_site.name', 'user.email', 'booking_site.url');
+                .select('booking_site.id_user', 'user.email', 'booking_site.url');
             return response.status(200).json({ bookingSiteList });
         } catch (error) {
             return response.status(500).json({ error: error });
         }
     },
 
+    //retorna site de reserva pelo id
     async getBookingSiteById(request, response){
         const {id} = request.body;
         console.log(request.body);
@@ -57,7 +61,7 @@ module.exports = {
             const bookingSite = await connection('booking_site')
                 .where('booking_site.id_user', id)
                 .join('user', 'user.id_user', '=', 'booking_site.id_user')
-                .select('booking_site.id_user', 'booking_site.name', 'user.email', 'booking_site.url')
+                .select('booking_site.id_user', 'user.email', 'booking_site.url')
                 .first();
             return response.status(200).json({ bookingSite });
         } catch (error) {
@@ -65,6 +69,7 @@ module.exports = {
         }
     },
 
+    //edita campos do site de reserva
     async edit(request, response){
         const {id_user, email, name, url} = request.body;
         try{

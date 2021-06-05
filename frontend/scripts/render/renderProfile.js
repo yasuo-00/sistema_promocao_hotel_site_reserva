@@ -1,8 +1,10 @@
 window.addEventListener('load', renderProfile);
 
+//renderiza os campos no perfil do usuario
 function renderProfile() {
     const user = JSON.parse(sessionStorage.getItem('user'));
     console.log(user.type);
+    //se usuario for um hotel
     if (user.type === 'hotel') {
         const url = 'http://localhost:3333/hotel/getById';
         const data = {id:user.id_user};
@@ -29,7 +31,7 @@ function renderProfile() {
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Email:</p>
-                            <input id="email" class="profilePropValue" value="${data.data.hotel.email}">
+                            <input id="email" class="profilePropValue" value="${data.data.hotel.email}" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Cidade:</p>
@@ -41,7 +43,7 @@ function renderProfile() {
                         </div>
             `
         });
-    } else if (user.type === 'booking_site') {
+    } else if (user.type === 'booking_site') { //se usuario for um site de reservas
         const url = 'http://localhost:3333/bookingSite/getById';
         const data = {id:user.id_user};
         const options = {
@@ -57,25 +59,21 @@ function renderProfile() {
         .then(data => {
             document.getElementById('profileForm').innerHTML=`
                         <div class="profileProps">
-                            <p class="profilePropName">Nome:</p>
-                            <input id="name" class="profilePropValue" value="${data.data.bookingSite.name}">
-                        </div>
-                        <div class="profileProps">
                             <p class="profilePropName">URL</p>
                             <input id="url" class="profilePropValue" value="${data.data.bookingSite.url}">
                         </div>
                         <div class="profileProps">
                             <p class="profilePropName">Email:</p>
-                            <input id="email" class="profilePropValue" value="${data.data.bookingSite.email}">
+                            <input id="email" class="profilePropValue" value="${data.data.bookingSite.email}" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto">
                         </div>
             `
         });
 
-    } else if (user.type === 'admin') {
+    } else if (user.type === 'admin') { //se usuario for um admin
         document.getElementById('profileForm').innerHTML=`
                         <div class="profileProps">
                             <p class="profilePropName">Email:</p>
-                            <input id="email" class="profilePropValue" value="${user.email}">
+                            <input id="email" class="profilePropValue" value="${user.email}" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto">
                         </div>
         `
     } else {
