@@ -242,3 +242,18 @@
 .editProfileButton:hover{
     background-color: var(--light-blue);
 }
+
+@media screen and (max-device-height:820px){
+    .account{
+        display: none;
+    }
+    .mainContent{
+        width: 100%;
+    }
+    .salesList{
+        width: 90%;
+    }
+    .filter{
+        height: 6%;
+    }
+}

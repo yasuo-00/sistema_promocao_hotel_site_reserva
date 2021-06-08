@@ -150,3 +150,10 @@
     color: var(--blue);
     font-weight: bolder;
 }
+
+
+@media screen and (max-device-height:820px){
+    .hotelList{
+        width: 90%;
+    }
+}

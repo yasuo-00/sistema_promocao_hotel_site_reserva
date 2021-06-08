@@ -1,5 +1,6 @@
 @import url('./global_styles.css');
 
+
 .container{
     width: 100%;
     height: 100%;
@@ -8,7 +9,9 @@
 .pageContent{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     height: 100%;
+    width: 100%;
 }
 
 .header{
@@ -56,12 +59,11 @@
 .login{
     position: relative;
     display: flex;
-    width: 40%;
-    height: 35%;
+    width: 35%;
+    height: 30%;
     flex-direction: column;
     align-content: center;
-    right: 15%;
-    top: 30%;
+    transform: translate(-40%, 80%);
     background-color: #fff;
     border-radius: var(--border-radius-value);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
@@ -91,12 +93,12 @@
 }
 
 .loginButton{
+    position: relative;
     background-color: var(--blue);
     border-radius: 10px;
     height: 2em;
     border-width: 0;
     position:relative;
-    margin-top:10%;
     color:#fff;
 }
 
@@ -106,16 +108,27 @@
     height: 2em;
     border-width: 0;
     position:relative;
-    margin-top:10%;
     color:#fff;
 }
 
+.register{
+    display: flex;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+}
 .registerButton{
+    white-space: normal;
+    overflow-wrap: break-word;
+    position: relative;
     background-color: #fff;
+    width: 100%;
     border-width: 0;
     color: var(--dark-orange);
     border-bottom-left-radius: var(--border-radius-value);
     border-bottom-right-radius: var(--border-radius-value);
+    
 }
 
 .registerButton:hover{
@@ -123,3 +136,18 @@
     border-width: 0;
     color: var(--lighter-orange);
 }
+
+@media screen and (min-device-height:561px ) and (max-device-height: 860px){
+    .login{
+        width: 40%;
+        height: 40%;
+        transform: translate(-100%, 80%);
+    }
+}
+@media (max-device-height: 560px) {
+    .login{
+        width: 40%;
+        height: 60%;
+    }
+}
+
