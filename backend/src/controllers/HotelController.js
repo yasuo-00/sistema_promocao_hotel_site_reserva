@@ -48,7 +48,7 @@ module.exports = {
         try {
             const hotelList = await connection('hotel')
                 .join('user', 'user.id_user', '=', 'hotel.id_user')
-                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate');
+                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate', 'hotel.description');
             return response.status(200).json({ hotelList });
         } catch (error) {
             return response.status(500).json({ error: error });
@@ -62,7 +62,7 @@ module.exports = {
             const hotelList = await connection('user')
                 .join('hotel', 'user.id_user', '=', 'hotel.id_user')
                 .where('hotel.name', 'like', '%' + query + '%')
-                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate');
+                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate', 'hotel.description');
             return response.status(200).json({ hotelList });
         } catch (error) {
             return response.status(500).json({ error: error });
@@ -76,7 +76,7 @@ module.exports = {
             const hotel = await connection('user')
                 .where('hotel.id_user', id)
                 .join('hotel', 'user.id_user', '=', 'hotel.id_user')
-                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate')
+                .select('hotel.id_user', 'hotel.name', 'user.email', 'hotel.cnpj', 'hotel.city', 'hotel.daily_rate','hotel.description')
                 .first();
             return response.status(200).json({ hotel });
         } catch (error) {
@@ -97,7 +97,8 @@ module.exports = {
                 .where('id_user', id_user)
                 .update({
                     name: name,
-                    city: city
+                    city: city,
+                    description:description
                 })
             return response.status(200).send();
         } catch (error) {

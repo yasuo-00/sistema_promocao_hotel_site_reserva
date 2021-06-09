@@ -13,5 +13,6 @@ routes.post('/addSales', salesController.addSales);
 
 routes.post('/sales/listByHotel', salesController.listByHotel);
 routes.post('/sales/listByBookingSite', salesController.listByBookingSite);
+routes.post('/sales/listByFilter', salesController.listByFilter)
 
 module.exports= routes; 

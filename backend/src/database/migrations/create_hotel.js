@@ -4,6 +4,7 @@ exports.up = function (knex) {
         table.string('name').notNullable();
         table.string('cnpj').notNullable().unique();
         table.string('city').notNullable();
+        table.string('description');
         table.decimal('daily_rate', 6,2).notNullable();
         table.foreign('id_user').references('id_user').inTable('user').onDelete('CASCADE');
     });

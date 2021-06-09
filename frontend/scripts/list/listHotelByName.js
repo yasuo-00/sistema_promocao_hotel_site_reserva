@@ -1,8 +1,8 @@
-
 window.addEventListener('load', listHotelByName)
+
 function listHotelByName() {
     const form = document.getElementById('searchForm');
-    form.addEventListener('submit', function (){submitQuery()})
+    form.addEventListener('submit', function (e){submitQuery()})
 }
 function submitQuery() {
     const url = 'http://localhost:3333/hotel/listByName';
@@ -37,6 +37,7 @@ function submitQuery() {
                         </div>
                         `
                 }).join('')}`;
+                window.stop();
             } else {
                 alert('Erro ao listar hotéis, tente mais tarde');
             }

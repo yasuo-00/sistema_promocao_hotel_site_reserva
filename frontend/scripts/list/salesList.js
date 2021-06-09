@@ -43,6 +43,7 @@ function renderSalesList(url, data = { default: 0 }, method = 'GET') {
         .then(res => res.json().then(jsonData => ({ status: res.status, data: jsonData })))
         .then(data => {
             if (data.status == 200) {
+                console.log(data.data)
                 document.getElementById('salesList').innerHTML = `
                         ${data.data.salesList.map(function (sales) {
                     return `

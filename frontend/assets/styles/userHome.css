@@ -43,7 +43,7 @@
 }
 
 .filter{
-    height: 20%;
+    height: auto;
     width: 80%;
     background-color: #fff;
     padding-top: 2%;
@@ -124,7 +124,6 @@
 }
 .hotelImg{
     content: url('../images/hotel.jpg');
-    height: 100%;
     width: 50%;
     object-fit: cover;
     border-top-left-radius: var(--border-radius-value);

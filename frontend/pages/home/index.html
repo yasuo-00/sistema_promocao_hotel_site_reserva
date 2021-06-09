@@ -5,17 +5,18 @@
     <link rel="stylesheet" href="/assets/styles/home.css">
     <script src="/components/sidebar.js"></script>
     <script src="/scripts/list/salesList.js"></script>
+    <script src="/scripts/list/listSalesByFilter.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="pageContent">
         <my-sidebar></my-sidebar>
         <div class="mainContent">
             <div class="search">
                 <form id="searchForm" class="searchForm">
-                    <input class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
                     <div class="searchSvg"></div>
+                    <input class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
                 </form>
                 <div class="accountAction">
                     <a href="http://localhost:3333/register" class="registerButton">CADASTRE-SE</a>
@@ -25,19 +26,19 @@
 
             </div>
             <div class="filter">
-                <form class="filterForm">
+                <form id="filterForm" class="filterForm">
                     <div class="destination">
                         <div class="destinationSvg"></div>
-                        <input type="text" placeholder="Cidade de Destino">
+                        <input id="destination" type="text" placeholder="Cidade de Destino">
                     </div>
                     <div class="bookingDuration">
                         <div class="checkin">
                             <div class="calendarSvg"></div>
-                            <input type="text" placeholder="Check-in">
+                            <input id="startDate" type="date" placeholder="Check-in">
                         </div>
                         <div class="checkout">
                             <div class="calendarSvg"></div>
-                            <input type="text" placeholder="Check-out">
+                            <input id="endDate" type="date" placeholder="Check-out">
                         </div>
                     </div>
                     <input type="submit" value="PESQUISAR">

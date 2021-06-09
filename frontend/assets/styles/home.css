@@ -73,7 +73,7 @@
     width: 60%;
     height: 100%;
     text-decoration: underline;
-    font-size: 1.25em;
+    font-size: 1.5vh;
 }
 .searchSvg{
     content: url('../icons/search.svg');
@@ -83,7 +83,7 @@
 }
 
 .filter{
-    height: 30%;
+    height: auto;
     width: 80%;
     background-color: #fff;
     padding-top: 2%;
@@ -165,8 +165,7 @@
 }
 .hotelImg{
     content: url('../images/hotel.jpg');
-    object-fit: contain;
-    height: 100%;
+    object-fit: cover;
     width: 50%;
     border-top-left-radius: var(--border-radius-value);
     border-bottom-left-radius: var(--border-radius-value);
@@ -208,12 +207,14 @@
 
 .account > .accountAction{
     display: flex;
-    position: relative;
+    position: fixed;
     top: 3%;
     left: 45%;
+    margin-right: 10%;
+    margin-left: auto;
     z-index: 2;
     width: 50%;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 .registerButton{
     background-color: rgba(0, 0, 0, 0);
@@ -233,7 +234,7 @@
 .loginButton{
     display: flex;
     flex-direction: row;
-    width: 30%;
+    width: 12vh;
     background-color: var(--blue);
     border-width: 0;
     font-size: 200%;
@@ -242,8 +243,9 @@
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    padding-left: 1%;
-    padding-right: 1%;
+    margin-left: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .loginButton:hover{
     background-color: var(--light-blue);
@@ -252,12 +254,12 @@
     text-align: center;
 }
 
-@media screen and (max-device-height:820px), screen and (max-device-width:780px){
+@media screen and (max-device-width:1014px){
     .search{
         display: flex;
         flex-direction: row;
         align-self: flex-start;
-        justify-content: space-between;
+        justify-content: space-evenly;
         width: 100%;
     }
 
@@ -282,8 +284,12 @@
     .registerButton, .loginButton{
         font-size: 80%;
     }
+    .registerButton{
+        width: 80%;
+    }
     .loginButton{
         width: 60%;
+        margin-left: 2%;
     }
     .bookingDuration{
         flex-direction: column;
@@ -293,7 +299,7 @@
     }
 }
 
-@media screen and (max-device-width:425px){
+@media screen and (max-device-width:580px){
     .search{
         justify-content: flex-start;
     }

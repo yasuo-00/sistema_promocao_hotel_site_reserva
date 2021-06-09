@@ -47,8 +47,8 @@
 }
 
 .sales{
-    height: 50%;
-    width: 60%;
+    height: auto;
+    width: 50%;
     background-color: #fff;
     padding-top: 2%;
     padding-left: 2%;
@@ -230,4 +230,14 @@
 
 .editProfileButton:hover{
     background-color: var(--light-blue);
+}
+
+@media screen and (max-device-width:715px){
+    .mainTitle p{
+        text-align: center;
+    }
+
+    .salesTimeframe{
+        flex-direction: column;
+    }
 }

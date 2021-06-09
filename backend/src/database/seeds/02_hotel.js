@@ -9,6 +9,7 @@ exports.seed = function (knex) {
                 name:'Ibis Hotel',
                 cnpj:'2222',
                 city:'São Paulo',
+                description:'Descrição Ibis',
                 daily_rate:100.00,
             },
             {
@@ -16,6 +17,7 @@ exports.seed = function (knex) {
                 name:'Ibirapuera Hotel',
                 cnpj:'3333',
                 city:'Campinas',
+                description:'Descrição Ibirapuera',
                 daily_rate:89.99,
             },
             {
@@ -23,6 +25,7 @@ exports.seed = function (knex) {
                 cnpj:'4444',
                 name:'Bourbon Hotel',
                 city:'São Paulo',
+                description:'Descrição Bourbon',
                 daily_rate:189.90,
             }
         ]);

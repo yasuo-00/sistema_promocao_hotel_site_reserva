@@ -6,20 +6,11 @@ function registerAccount() {
 }
 
 function submitAccountRegister() {
-    const error = validateFields();
-    if (error.length === 0) {
-        const accType = document.getElementById('accountType').value;
-        if (accType === 'hotel') {
-            submitHotel();
-        } else if (accType === 'booking_site') {
-            submitBookingSite();
-        }
-    } else {
-        var errorString = '';
-        error.forEach(err => {
-            errorString += err + ', ';
-        })
-        alert(errorString);
+    const accType = document.getElementById('accountType').value;
+    if (accType === 'hotel') {
+        submitHotel();
+    } else if (accType === 'booking_site') {
+        submitBookingSite();
     }
 }
 
@@ -79,10 +70,3 @@ function submitHotel() {
 
 }
 
-
-function validateFields() {
-    const fields={
-
-    };
-    return [];
-}
