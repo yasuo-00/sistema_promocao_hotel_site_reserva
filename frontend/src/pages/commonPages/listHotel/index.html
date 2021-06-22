@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/styles/hotelList.css">
+    <script src="/components/sidebar.js"></script>
+    <script src="/scripts/list/listHotelByName.js"></script>
+    <script src="/scripts/list/hotelList.js"></script>
+</head> 
+
+<body>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="pageContent">
+        <my-sidebar></my-sidebar>
+        <div class="mainContent">
+            <div class="search">
+                <form id="searchForm">
+                    <input id="searchInput" class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
+                </form>
+                <div class="searchSvg"></div>
+            </div>
+            <div class="listTitle">
+                <p>LISTA DE HOTÉIS</p>
+            </div>
+            <div id="hotelList" class="hotelList">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/styles/register.css">
+    <script src="/scripts/render/renderRegisterForm.js"></script>
+    <script src="/scripts/add/registerAccount.js"></script>
+</head>
+
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="container">
+        <div class="header">
+            <p>Booking Deals</p>
+            <div class="home">
+                <div class="homeSvg"></div>
+                <a href="http://localhost:3333/">Home</a>
+            </div>
+        </div>
+        <div class="pageContent">
+            <div class="bgImage"></div>
+            <div class="register">
+                <p class="registerTitle">Registrar</p>
+                <form id="registerForm" class="registerForm">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" required>
+
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" placeholder="Senha" required>
+                    <label for="confirmPassword">Confirmar Senha:</label>
+                    <input type="confirmPassword" id="confirmPassword" name="confirmPassword" placeholder="Senha" required>
+                    <label for="accountType">Escolha seu tipo:</label>
+                    <select id="accountType">
+                        <option value="hotel">Hotel</option>
+                        <option value="booking_site">Site de Reservas</option>
+                    </select>
+                    <div id="accountFields" class="accountFields">
+                    </div>
+                    <input class="registerButton" type="submit" value="REGISTRAR" onsubmit="">
+
+                </form>
+                <form class="login" action="http://localhost:3333/login">
+                    <input type="submit" class="loginButton" value="Já possui conta? Clique aqui para logar">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

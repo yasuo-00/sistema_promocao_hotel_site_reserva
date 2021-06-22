@@ -1,0 +1,284 @@
+@import url('./global_styles.css');
+
+
+.homePage-pageContent{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+.homePage-mainContent{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #e3eaea;
+    align-content: center;
+    align-items: center;
+    padding-top: 1.5%;
+}
+
+.homePage-search{
+    width: 60%;
+    height: 5%;
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+.homePage-searchForm{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+.homePage-searchInput{
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    width: 60%;
+    height: 100%;
+    text-decoration: underline;
+    font-size: 2vh;
+}
+.homePage-searchSvg{
+    content: url('../icons/search.svg');
+    width: 8%;
+    height: 60%;
+    filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(84%) contrast(88%);
+}
+
+.homePage-filter{
+    height: auto;
+    width: 80%;
+    background-color: #fff;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: var(--border-radius-value);
+    margin-bottom: 3%;
+    padding-bottom: 2%;
+    
+}
+
+.homePage-filterForm{
+    display: flex;
+    flex-direction: column;
+    
+}
+.homePage-destination{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3%;
+}
+.homePage-destinationSvg{
+    content: url('../icons/destination.svg');
+    width: 8%;
+    height: 8%;
+    filter: var(--filter-blue);
+    margin-right: 1%;
+}
+.homePage-bookingDuration{
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+.homePage-filterForm input[type=submit]{
+    background-color: var(--blue);
+    border-radius: 10px;
+    height: 2em;
+    width: 90%;
+    border-width: 0;
+    align-self: center;
+    color:#fff;
+    bottom: 0%;
+}
+.homePage-filterForm input[type=submit]:hover{
+    background-color: var(--light-blue);
+}
+
+.homePage-checkin, .homePage-checkout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.homePage-calendarSvg{
+    content: url('../icons/calendar.svg');
+    height: 13%;
+    width: 13%;
+    filter: var(--filter-blue);
+    margin-right: 1%;
+}
+
+
+.homePage-hotelList{
+    height: 100%;
+    width: 85%;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.homePage-hotelCard{
+    display: flex;
+    flex-direction: row;
+    background-color: #fbfcfc;
+    padding-right: 2%;
+    border-radius: var(--border-radius-value);
+    margin-bottom: 5%;
+}
+.homePage-hotelImg{
+    content: url('../images/hotel.jpg');
+    object-fit: cover;
+    width: 50%;
+    border-top-left-radius: var(--border-radius-value);
+    border-bottom-left-radius: var(--border-radius-value);
+}
+
+.homePage-hotelInfo{
+    align-content: center;
+    padding-left: 3%;
+}
+.homePage-hotelName{
+    font-weight: bolder;
+}
+.homePage-hotelDescription{
+    columns: #bebebe;
+}
+.homePage-hotelPrice{
+    color: var(--blue);
+    font-weight: bolder;
+}
+
+.homePage-account{
+    width: 40%;
+    height: 100%;
+    position: relative;
+}
+
+.homePage-bgImage{
+    position: absolute;
+    content: url('../images/home_bg.jpg');
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.homePage-accountAction{
+    display: none;
+}
+
+.homePage-account > .homePage-accountAction{
+    display: flex;
+    position: fixed;
+    top: 3%;
+    left: 45%;
+    margin-right: 10%;
+    margin-left: auto;
+    z-index: 2;
+    width: 50%;
+    justify-content: flex-end;
+}
+.homePage-registerButton{
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: var(--dark-orange);
+    font-weight: bolder;
+    font-size: 200%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+.homePage-registerButton:hover{
+    color: var(--lighter-orange);
+}
+
+
+.homePage-loginButton{
+    display: flex;
+    flex-direction: row;
+    width: 12vh;
+    background-color: var(--blue);
+    border-width: 0;
+    font-size: 200%;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.homePage-loginButton:hover{
+    background-color: var(--light-blue);
+}
+::-webkit-input-placeholder{
+    text-align: center;
+}
+
+@media screen and (max-device-width:1014px){
+    .homePage-search{
+        display: flex;
+        flex-direction: row;
+        align-self: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .homePage-destination, .homePage-checkin, .homePage-checkout{
+        justify-content: center;
+    }
+
+    .homePage-calendarSvg{
+        width: 10%;
+    }
+    .homePage-accountAction{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 25%;
+        padding-right: 1%;
+    }
+    .homePage-mainContent{
+        width: 100%;
+    }
+    
+    .homePage-registerButton, .homePage-loginButton{
+        font-size: 80%;
+    }
+    .homePage-registerButton{
+        width: 80%;
+    }
+    .homePage-loginButton{
+        width: 60%;
+        margin-left: 2%;
+    }
+    .homePage-bookingDuration{
+        flex-direction: column;
+    }
+    .homePage-account{
+        display: none;
+    }
+}
+
+@media screen and (max-device-width:580px){
+    .homePage-search{
+        justify-content: flex-start;
+    }
+    .homePage-searchForm{
+        width: 60%;
+    }
+    .homePage-searchInput{
+        width: 80%;
+    }
+    .homePage-registerButton,.homePage-loginButton{
+        font-size: 60%;
+    }
+    .homePage-loginButton{
+        margin-left: 1%;
+        border-radius: 10%;
+    }
+}

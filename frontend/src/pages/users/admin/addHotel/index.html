@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/styles/registerHotel.css">
+    <script src="/scripts/add/registerHotel.js"></script>
+    <script src="/scripts/isAuthenticated.js"></script>
+</head>
+
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="pageContent">
+        <my-sidebar></my-sidebar>
+        <script src="/components/sidebar.js"></script>
+        <div class="mainContent">
+            <div class="mainTitle">
+                <p>Registar Hotel</p>
+            </div>
+            <div class="filter">
+                <form class="filterForm">
+                    <div id="registerForm" class="filterInput">
+                        <label for="hotelInput">Nome do Hotel:</label>
+                        <input id="hotelName" type="text" placeholder="Hotel">
+                    </div>
+                    <div class="filterInput">
+                        <label for="hotelInput">CNPJ:</label>
+                        <input id="cnpj" type="text" placeholder="CNPJ" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}\/[0]{3}[1-2]-[0-9]" title="Formato de CNPJ incorreto (XX.XXX.XXX/000X-XXX)" >
+                    </div>
+                    <div class="filterInput">
+                        <label for="hotelInput">Cidade:</label>
+                        <input id="city" type="text" placeholder="Cidade">
+                    </div>
+                    <div class="filterInput">
+                        <label for="hotelInput">Email:</label>
+                        <input id="email" type="text" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto">
+                    </div>
+                    <div class="filterInput">
+                        <label for="bookingSiteInput">Senha:</label>
+                        <input id="password" type="password" placeholder="Senha">
+                    </div>
+                    <div class="filterInput">
+                        <label for="hotelInput">Preço da diária:</label>
+                        <input id="dailyRate" type="text" placeholder="Diária">
+                    </div>
+                    <input type="submit" value="REGISTRAR">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

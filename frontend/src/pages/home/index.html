@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/styles/home.css">
+    <script src="/components/sidebar.js"></script>
+    <script src="/scripts/list/salesList.js"></script>
+    <script src="/scripts/list/listSalesByFilter.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="pageContent">
+        <my-sidebar></my-sidebar>
+        <div class="mainContent">
+            <div class="search">
+                <form id="searchForm" class="searchForm">
+                    <div class="searchSvg"></div>
+                    <input class="searchInput" type="text" placeholder="Pesquisar Hotel por nome">
+                </form>
+                <div class="accountAction">
+                    <a href="http://localhost:3333/register" class="registerButton">CADASTRE-SE</a>
+                    <a href="http://localhost:3333/login" class="loginButton">LOGIN</a>
+                </div>
+
+
+            </div>
+            <div class="filter">
+                <form id="filterForm" class="filterForm">
+                    <div class="destination">
+                        <div class="destinationSvg"></div>
+                        <input id="destination" type="text" placeholder="Cidade de Destino">
+                    </div>
+                    <div class="bookingDuration">
+                        <div class="checkin">
+                            <div class="calendarSvg"></div>
+                            <input id="startDate" type="date" placeholder="Check-in">
+                        </div>
+                        <div class="checkout">
+                            <div class="calendarSvg"></div>
+                            <input id="endDate" type="date" placeholder="Check-out">
+                        </div>
+                    </div>
+                    <input type="submit" value="PESQUISAR">
+                </form>
+            </div>
+            <div id="salesList" class="hotelList">
+            </div>
+        </div>
+        <div class="account">
+            <div class="accountAction">
+                <a href="http://localhost:3333/register" class="registerButton">CADASTRE-SE</a>
+                <a href="http://localhost:3333/login" class="loginButton">LOGIN</a>
+            </div>
+            <div class="bgImage"></div>
+        </div>
+    </div>
+</body>
+
+</html>

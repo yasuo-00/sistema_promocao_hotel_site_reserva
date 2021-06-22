@@ -15,26 +15,22 @@ module.exports = {
 
     //funcao de logar usuario
     async login(request, response) {
-        if (request.method === 'POST') {
-            const {email, password} = request.body;
-            console.log(email, password);
-            try{
-                //returns the user data, if exists on database
-                const user = await connection('user')
-                                .where('email', email)
-                                .select('id_user', 'email','password', 'type').first();
-                if (user!== undefined){
-                    if(user.password===password){
-                        return response.status(200).json({ user});
-                    }
-                    return response.status(401).json({error: 'Email or password is wrong'})
+        const { email, password } = request.body;
+        console.log(email, password);
+        try {
+            //returns the user data, if exists on database
+            const user = await connection('user')
+                .where('email', email)
+                .select('id_user', 'email', 'password', 'type').first();
+            if (user !== undefined) {
+                if (user.password === password) {
+                    return response.status(200).json({ user });
                 }
-                return response.status(401).json({error: 'Email or password is wrong'})
-            }catch(error){
-                return response.status(500).json({error: 'Erro ao efetuar login, tente mais tarde'});
+                return response.status(401).json({ error: 'Email or password is wrong' })
             }
-        }else{
-            response.sendFile('index.html', { root: path.resolve('../frontend/pages/login/') });
+            return response.status(401).json({ error: 'Email or password is wrong' })
+        } catch (error) {
+            return response.status(500).json({ error: 'Erro ao efetuar login, tente mais tarde' });
         }
     },
 
@@ -42,7 +38,7 @@ module.exports = {
     async logout(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/home/') });
     },
-    
+
     //redireciona para pagina de cadastro
     async register(request, response) {
         response.sendFile('index.html', { root: path.resolve('../frontend/pages/register/') });
@@ -54,18 +50,18 @@ module.exports = {
     },
 
     //edita campos do usuario
-    async edit(request, response){
+    async edit(request, response) {
         console.log('here');
-        const {id_user, email} = request.body;
+        const { id_user, email } = request.body;
         console.log(request.body);
-        try{
+        try {
             await connection('user')
                 .where('id_user', id_user)
-                .update({email: email})
+                .update({ email: email })
             return response.status(200).send();
-        }catch (error){
-            return response.status(500).json({error: 'Erro ao editar perfil, tente mais tarde'});
+        } catch (error) {
+            return response.status(500).json({ error: 'Erro ao editar perfil, tente mais tarde' });
         }
     }
-    
+
 }
