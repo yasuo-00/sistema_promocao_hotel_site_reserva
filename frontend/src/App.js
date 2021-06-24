@@ -9,6 +9,7 @@ import Profile from './pages/commonPages/profile'
 import AddBookingSite from './pages/users/admin/addBookingSite'
 import AddHotel from './pages/users/admin/addHotel'
 import HotelList from './pages/commonPages/listHotel'
+import AddSales from './pages/addSales'
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
                 </Route>
                 <Route path='/hotelList' >
                     <HotelList></HotelList>
+                </Route>
+                <Route path='/addSales' >
+                    <AddSales></AddSales>
                 </Route>
             </Switch>
         </BrowserRouter>

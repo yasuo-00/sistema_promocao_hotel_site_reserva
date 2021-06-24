@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import Sidebar from '../../../components/sidebar'
-import '../../../assets/styles/hotelList.css'
-import api from '../../../services/api'
+import Sidebar from '../../components/sidebar'
+import '../../assets/styles/addSales.css'
+import api from '../../services/api'
 
 export default function AddSales() {
     const [initialDate, setInicialDate] = useState('')
@@ -11,7 +11,8 @@ export default function AddSales() {
     const [hotelId, setHotelId] = useState('')
     const [bookingSiteId, setBookingSiteId] = useState('')
 
-    async function submitSalesForm(){
+    async function submitSalesForm(e) {
+        e.preventDefault()
         const data = {
             booking_site_id: bookingSiteId,
             hotel_id: hotelId,
@@ -19,15 +20,14 @@ export default function AddSales() {
             initial_date: new Date(initialDate).toISOString(),
             final_date: new Date(finalDate).toISOString()
         }
-        api.post('addSales',data)
-        .then(response =>{
-            if (response.status == 200) {
-                alert('Promoção adicionada com sucesso');
-            } else {
-                alert('Falha ao adicionar promoção, tente novamente');
-            }
-        });
-}
+        api.post('addSales', data)
+            .then(response => {
+                if (response.status == 200) {
+                    alert('Promoção adicionada com sucesso')
+                } else {
+                    alert('Falha ao adicionar promoção, tente novamente')
+                }
+            })
     }
 
     return (
@@ -38,7 +38,7 @@ export default function AddSales() {
                     <p>Adicionar Nova Promoção</p>
                 </div>
                 <div class="sales">
-                    <form id="salesForm" class="salesForm">
+                    <form id="salesForm" class="salesForm" onSubmit={submitSalesForm}>
                         <div id="hotelSelect" class="salesInput">
                         </div>
                         <div id="bookingSiteSelect" class="salesInput">
