@@ -16,27 +16,27 @@ export default function AddHotel() {
                 <div className="addHotel-filter">
                     <form className="addHotel-filterForm">
                         <div id="registerForm" className="addHotel-filterInput">
-                            <label for="hotelInput">Nome do Hotel:</label>
+                            <label htmlFor="hotelInput">Nome do Hotel:</label>
                             <input id="hotelName" type="text" placeholder="Hotel" />
                         </div>
                         <div className="addHotel-filterInput">
-                            <label for="hotelInput">CNPJ:</label>
+                            <label htmlFor="hotelInput">CNPJ:</label>
                             <input id="cnpj" type="text" placeholder="CNPJ" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}\/[0]{3}[1-2]-[0-9]" title="Formato de CNPJ incorreto (XX.XXX.XXX/000X-XXX)" />
                         </div>
                         <div className="addHotel-filterInput">
-                            <label for="hotelInput">Cidade:</label>
+                            <label htmlFor="hotelInput">Cidade:</label>
                             <input id="city" type="text" placeholder="Cidade" />
                         </div>
                         <div className="addHotel-filterInput">
-                            <label for="hotelInput">Email:</label>
+                            <label htmlFor="hotelInput">Email:</label>
                             <input id="email" type="text" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" />
                         </div>
                         <div className="addHotel-filterInput">
-                            <label for="bookingSiteInput">Senha:</label>
+                            <label htmlFor="bookingSiteInput">Senha:</label>
                             <input id="password" type="password" placeholder="Senha" />
                         </div>
                         <div className="addHotel-filterInput">
-                            <label for="hotelInput">Preço da diária:</label>
+                            <label htmlFor="hotelInput">Preço da diária:</label>
                             <input id="dailyRate" type="text" placeholder="Diária" />
                         </div>
                         <input type="submit" value="REGISTRAR" />

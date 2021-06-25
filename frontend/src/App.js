@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { Redirect, Link, BrowserRouter, Switch, Route } from 'react-router-dom'
-import api from './services/api'
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'

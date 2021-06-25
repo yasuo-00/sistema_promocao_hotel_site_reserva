@@ -17,7 +17,7 @@ export default function Home() {
         }catch(error){
             alert('Erro ao listar promoções, favor tentar mais tarde')
         }
-    })
+    },[])
 
     return (
         <div className="homePage-pageContent">
@@ -53,8 +53,8 @@ export default function Home() {
                     </form>
                 </div>
                 <div id="salesList" className="homePage-hotelList">
-                    {salesList.map((sale) => (
-                        <div className="homePage-hotelCard">
+                    {salesList.map((sale,index) => (
+                        <div key={index} className="homePage-hotelCard">
                             <div className="homePage-hotelImg"></div>
                             <div className="homePage-hotelInfo">
                                 <p className="homePage-hotelName">

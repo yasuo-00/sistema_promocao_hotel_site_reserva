@@ -15,7 +15,7 @@ function bookingSiteSelect(){
     .then(data => {
         if (data.status == 200) {
             document.getElementById('bookingSiteSelect').innerHTML = `
-                        <label for="bookingSite">Site de Reservas:</label>
+                        <label htmlFor="bookingSite">Site de Reservas:</label>
                         <select name="bookingSite" id="bookingSite">
                         ${data.data.bookingSiteList.map(function (bookingSite) {
                             return `

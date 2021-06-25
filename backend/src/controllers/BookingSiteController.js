@@ -10,7 +10,8 @@ module.exports = {
 
     //funcao de criacao de um novo site de reserva
     async register(request, response) {
-        const { name, email, password, url } = request.body;
+        const { email, password, url } = request.body;
+        console.log('passing body register',request.body)
         try {
             const user = await connection('user')
                 .insert({
@@ -24,7 +25,6 @@ module.exports = {
             await connection('booking_site')
                 .insert({
                     id_user:user[0],
-                    name:name,
                     url:url,
                 }).catch(function (error) {
                     console.error(error);

@@ -22,21 +22,21 @@
             <div class="register">
                 <p class="registerTitle">Registrar</p>
                 <form id="registerForm" class="registerForm">
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input type="text" id="email" name="email" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" required>
 
-                    <label for="password">Senha:</label>
+                    <label htmlFor="password">Senha:</label>
                     <input type="password" id="password" name="password" placeholder="Senha" required>
-                    <label for="confirmPassword">Confirmar Senha:</label>
+                    <label htmlFor="confirmPassword">Confirmar Senha:</label>
                     <input type="confirmPassword" id="confirmPassword" name="confirmPassword" placeholder="Senha" required>
-                    <label for="accountType">Escolha seu tipo:</label>
+                    <label htmlFor="accountType">Escolha seu tipo:</label>
                     <select id="accountType">
                         <option value="hotel">Hotel</option>
                         <option value="booking_site">Site de Reservas</option>
                     </select>
                     <div id="accountFields" class="accountFields">
                     </div>
-                    <input class="registerButton" type="submit" value="REGISTRAR" onsubmit="">
+                    <input class="registerButton" type="submit" value="REGISTRAR">
 
                 </form>
                 <form class="login" action="http://localhost:3333/login">

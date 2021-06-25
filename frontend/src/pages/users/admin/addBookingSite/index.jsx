@@ -27,15 +27,15 @@ export default function AddBookingSite() {
                 <div className="addBookingSite-filter">
                     <form id="registerForm" className="addBookingSite-filterForm" onSubmit={registerBookingSite}>
                         <div className="addBookingSite-filterInput">
-                            <label for="bookingSiteInput">URL do site:</label>
+                            <label htmlFor="bookingSiteInput">URL do site:</label>
                             <input id="url" type="text" placeholder="URL" onChange={e=>setUrl(e.target.value)}/>
                         </div>
                         <div className="addBookingSite-filterInput">
-                            <label for="bookingSiteInput">Email:</label>
+                            <label htmlFor="bookingSiteInput">Email:</label>
                             <input id="email" type="text" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" onChange={e=>setEmail(e.target.value)}/>
                         </div>
                         <div className="addBookingSite-filterInput">
-                            <label for="bookingSiteInput">Senha:</label>
+                            <label htmlFor="bookingSiteInput">Senha:</label>
                             <input id="password" type="password" placeholder="Senha" onChange={e=>setPassword(e.target.value)}/>
                         </div>
 

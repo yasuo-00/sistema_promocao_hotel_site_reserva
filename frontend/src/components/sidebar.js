@@ -24,26 +24,26 @@ export default function Sidebar() {
 
   return (
     <main id="main">
-      <div id="sidebar" class="d-flex flex-column flex-shrink-0 bg-light">
+      <div id="sidebar" className="d-flex flex-column flex-shrink-0 bg-light">
         <a
           href="/"
-          class="d-block p-3 link-dark text-decoration-none"
+          className="d-block p-3 link-dark text-decoration-none"
           title="Icon-only"
           data-bs-toggle="tooltip"
           data-bs-placement="right"
         >
           <span id="logo">Booking Deals</span>
         </a>
-        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
           <li>
             <a
               href="http://localhost:3000/userHome"
-              class="nav-link py-3"
+              className="nav-link py-3"
               title="Home"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
             >
-              <div id="promo" class="homeSvg"></div>
+              <div id="promo" className="homeSvg"></div>
               <span id="nav-home">Home</span>
             </a>
           </li>
@@ -51,12 +51,12 @@ export default function Sidebar() {
             <li>
               <a
                 href="http://localhost:3000/profile"
-                class="nav-link py-3"
+                className="nav-link py-3"
                 title="Perfil"
                 data-bs-toggle="tooltip"
                 data-bs-placement="right"
               >
-                <div id="promo" class="profileSvg"></div>
+                <div id="promo" className="profileSvg"></div>
                 <span id="nav-profile">Perfil</span>
               </a>
             </li>
@@ -64,24 +64,24 @@ export default function Sidebar() {
           <li>
             <a
               href="#"
-              class="nav-link py-3"
+              className="nav-link py-3"
               title="Promoções"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
             >
-              <div id="promo" class="salesSvg"></div>
+              <div id="promo" className="salesSvg"></div>
               <span id="nav-promo">Promoções</span>
             </a>
           </li>
           <li>
             <a
               href="http://localhost:3000/hotelList"
-              class="nav-link py-3"
+              className="nav-link py-3"
               title="Hotéis"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
             >
-              <div id="promo" class="hotelSvg"></div>
+              <div id="promo" className="hotelSvg"></div>
               <span id="nav-hotel">Hotéis</span>
             </a>
           </li>
@@ -89,12 +89,12 @@ export default function Sidebar() {
             <li>
               <a
                 href="http://localhost:3000/addSales"
-                class="nav-link py-3"
+                className="nav-link py-3"
                 title="Adicionar Nova Promoção"
                 data-bs-toggle="tooltip"
                 data-bs-placement="right"
               >
-                <div id="promo" class="addSvg"></div>
+                <div id="promo" className="addSvg"></div>
                 <span id="nav-add-sales">Adicionar Nova Promoção</span>
               </a>
             </li>
@@ -104,24 +104,24 @@ export default function Sidebar() {
               <li>
                 <a
                   href="http://localhost:3000/addHotel"
-                  class="nav-link py-3"
+                  className="nav-link py-3"
                   title="Registrar Hotel"
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                 >
-                  <div id="promo" class="addSvg"></div>
+                  <div id="promo" className="addSvg"></div>
                   <span id="nav-add-hotel">Registrar Hotel</span>
                 </a>
               </li>
               <li>
                 <a
                   href="http://localhost:3000/addBookingSite"
-                  class="nav-link py-3"
+                  className="nav-link py-3"
                   title="Registrar Site de Reserva"
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                 >
-                  <div id="promo" class="addSvg"></div>
+                  <div id="promo" className="addSvg"></div>
                   <span id="nav-add-booking-site">Registrar Site de Reserva</span>
                 </a>
               </li>
@@ -131,13 +131,13 @@ export default function Sidebar() {
             <li>
               <a
                 id="logout"
-                class="nav-link py-3"
+                className="nav-link py-3"
                 title="Sair"
                 data-bs-toggle="tooltip"
                 data-bs-placement="right"
                 onClick={logout}
               >
-                <div id="promo" class="logoutSvg"></div>
+                <div id="promo" className="logoutSvg"></div>
                 <span id="nav-logout">Sair</span>
               </a>
             </li>

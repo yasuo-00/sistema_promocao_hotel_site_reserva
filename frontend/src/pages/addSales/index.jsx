@@ -46,19 +46,19 @@ export default function AddSales() {
                         <div class="salesInput">
                             <div class="salesTimeframe">
                                 <div class="initialDate">
-                                    <label for="initialDate">Data inicial:</label>
+                                    <label htmlFor="initialDate">Data inicial:</label>
                                     <div class="calendarSvg"></div>
                                     <input id="initialDate" type="date" placeholder="Data inicial" required />
                                 </div>
                                 <div class="finalDate">
-                                    <label for="finalDate">Data final:</label>
+                                    <label htmlFor="finalDate">Data final:</label>
                                     <div class="calendarSvg"></div>
                                     <input id="finalDate" type="date" placeholder="Data final" required />
                                 </div>
                             </div>
                         </div>
                         <div class="salesInput">
-                            <label for="priceInput">Preço:</label>
+                            <label htmlFor="priceInput">Preço:</label>
                             <input type="number" id="priceInput" name="priceInput" placeholder="Preço" pattern="[0-9]{1,6}((.|,)[0-9]{1,2})?" title="Preço Inválido" required />
                         </div>
                         <input type="submit" value="ADICIONAR" />

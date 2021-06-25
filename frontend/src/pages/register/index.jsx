@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect, Link, useHistory } from 'react-router-dom'
 import '../../assets/styles/register.css'
 import api from '../../services/api';
+
 
 export default function Register() {
     const [email, setEmail] = useState('')
@@ -12,35 +13,80 @@ export default function Register() {
     const [name, setName] = useState('')
     const [dailyRate, setDailyRate] = useState(0)
     const [city, setCity] = useState('')
+    const history = useHistory()
+
+    async function submitAccountRegister(e) {
+        e.preventDefault()
+        if (accountType === 'hotel') {
+            return submitHotel()
+        } else if (accountType === 'booking_site') {
+            return submitBookingSite()
+        }
+    }
+
+    async function submitBookingSite() {
+        const data = {
+            email: email,
+            password: password,
+            url: url,
+        }
+        try {
+            await api.post('/bookingSite/register', data)
+                .then(response => {
+                    if (response.status == 204) {
+                        history.pushState('/login')
+                    } else {
+                        alert('Erro ao cadastrar, verifique os campos e tente novamente')
+                    }
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function submitHotel() {
+        const data = {
+            email: email,
+            password: password,
+            name: name,
+            cnpj: cnpj,
+            city: city,
+            daily_rate: dailyRate,
+        }
+        await api.post('/hotel/register')
+            .then(response => {
+                if (response.status == 204) {
+                    history.pushState('/login')
+                } else {
+                    alert('Erro ao cadastrar, verifique os campos e tente novamente')
+                }
+            })
+
+    }
 
     //renderiza campos para registro conforme o tipo de conta (hotel/site_de_reservas)
     function renderAccountFields() {
         if (accountType === 'hotel') {
             return (
                 <>
-                    <label for="cnpj">CNPJ:</label>
+                    <label htmlFor="cnpj">CNPJ:</label>
                     <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}\/[0]{3}[1-2]-[0-9]{2}" title="Formato de CNPJ incorreto (XX.XXX.XXX/000X-XX)" required onChange={e => setCnpj(e.target.value)} />
-                    <label for="name">Nome do Hotel:</label>
+                    <label htmlFor="name">Nome do Hotel:</label>
                     <input id="name" type="text" placeholder="Nome" required onChange={e => setName(e.target.value)} />
-                    <label for="city">Cidade:</label>
+                    <label htmlFor="city">Cidade:</label>
                     <input type="text" id="city" name="city" placeholder="Cidade" required onChange={e => setCity(e.target.value)} />
-                    <label for="dailyRate">Preço</label>
+                    <label htmlFor="dailyRate">Preço</label>
                     <input type="number" id="dailyRate" name="dailyRate" pattern="[0-9]{2,6}((.|,)[0-9]{1,2})?" title="Preço Inválido" required onChange={e => setDailyRate(e.target.value)} />
                 </>
             )
         } else {
             return (
                 <>
-                    <label for="url">URL:</label>
-                    <input type="text" id="url" name="url" placeholder="URL" required />
+                    <label htmlFor="url">URL:</label>
+                    <input type="text" id="url" name="url" placeholder="URL" required onChange={e => setUrl(e.target.value)} />
                 </>
             )
         }
-    }
-
-
-    async function submitRegister() {
-        console.log('asodjaiso')
     }
 
     return (
@@ -56,15 +102,14 @@ export default function Register() {
                 <div className="registerPage-bgImage"></div>
                 <div className="registerPage-register">
                     <p className="registerPage-registerTitle">Registrar</p>
-                    <form id="registerForm" className="registerPage-registerForm" onSubmit={submitRegister}>
-                        <label for="email">Email:</label>
+                    <form id="registerForm" className="registerPage-registerForm" onSubmit={submitAccountRegister}>
+                        <label htmlFor="email">Email:</label>
                         <input type="text" id="email" name="email" placeholder="Email" pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" required onChange={e => setEmail(e.target.value)} />
-
-                        <label for="password">Senha:</label>
+                        <label htmlFor="password">Senha:</label>
                         <input type="password" id="password" name="password" placeholder="Senha" required onChange={e => setPassword(e.target.value)} />
-                        <label for="confirmPassword">Confirmar Senha:</label>
-                        <input type="confirmPassword" id="confirmPassword" name="confirmPassword" placeholder="Senha" required />
-                        <label for="accountType">Escolha seu tipo:</label>
+                        <label htmlFor="confirmPassword">Confirmar Senha:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Senha" required />
+                        <label htmlFor="accountType">Escolha seu tipo:</label>
                         <select id="accountType" onChange={e => setAccountType(e.target.value)}>
                             <option value="hotel">Hotel</option>
                             <option value="booking_site">Site de Reservas</option>
@@ -72,8 +117,7 @@ export default function Register() {
                         <div id="accountFields" className="registerPage-accountFields">
                             {renderAccountFields()}
                         </div>
-                        <input className="registerPage-registerButton" type="submit" value="REGISTRAR" onsubmit="" />
-
+                        <input className="registerPage-registerButton" type="submit" value="REGISTRAR" />
                     </form>
                     <form className="registerPage-login" action="http://localhost:3333/login">
                         <input type="submit" className="registerPage-loginButton" value="Já possui conta? Clique aqui para logar" />

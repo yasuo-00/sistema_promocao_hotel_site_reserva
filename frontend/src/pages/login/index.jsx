@@ -44,10 +44,10 @@ export default function Login() {
                 <div className="loginPage-login">
                     <p className="loginPage-loginTitle">Login</p>
                     <form id="loginForm" className="loginPage-loginForm" onSubmit={submitLogin}>
-                        <label for="email">Email:</label>
+                        <label htmlFor="email">Email:</label>
                         <input type="text" id="email" name="email" placeholder="Email"
                             pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" required onChange={e=>setEmail(e.target.value)}/>
-                        <label for="password">Senha:</label>
+                        <label htmlFor="password">Senha:</label>
                         <input type="password" id="password" name="password" placeholder="Senha" required onChange={e=>setPassword(e.target.value)}/>
                         <input className="loginPage-loginButton" type="submit" value="LOGIN" />
                         <Link to="/register" className="loginPage-registerButton">Não possui conta? Cadastre-se clicando aqui</Link>
