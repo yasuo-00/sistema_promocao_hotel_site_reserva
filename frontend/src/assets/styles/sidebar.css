@@ -96,24 +96,16 @@
     height: 100%;
 }
 
-@media screen and (max-device-width:1023px) {
-    .homeSvg,.profileSvg,.salesSvg,.hotelSvg,.addSvg,.registerSvg,.logoutSvg{
-        height: 80% ;
-        width: 80%;
-    }
+.sidebarItem{
+    width: 100%;
 }
 
-@media screen and (max-device-width:750px) {
-    .homeSvg,.profileSvg,.salesSvg,.hotelSvg,.addSvg,.registerSvg,.logoutSvg{
-        height: 100% ;
-        width: 100%;
-    }
+a.nav-link.py-3 > span{
+    font-size: 2vh;
 }
 
-@media screen and (max-device-width:500px) {
-    .homeSvg,.profileSvg,.salesSvg,.hotelSvg,.addSvg,.registerSvg,.logoutSvg{
-        height: 130% ;
-        width: 130%;
+@media screen and (max-device-width:1024px) {
+    a.nav-link.py-3 > span{
+        font-size: 1vh;
     }
 }
-

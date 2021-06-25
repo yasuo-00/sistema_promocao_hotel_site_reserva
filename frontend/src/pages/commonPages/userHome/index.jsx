@@ -79,6 +79,8 @@ export default function UserHome() {
     }, [])
 
     return (profile !== null &&
+        <>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <div className="userHomePage-pageContent">
             <Sidebar></Sidebar>
             <div className="userHomePage-mainContent">
@@ -104,8 +106,8 @@ export default function UserHome() {
                     <p>ÚLTIMAS PROMOÇÕES</p>
                 </div>
                 <div id="salesList" className="userHomePage-salesList">
-                    {salesList.map((sale) => (
-                        <div className="homePage-hotelCard">
+                    {salesList.map((sale,index) => (
+                        <div key={index} className="homePage-hotelCard">
                             <div className="homePage-hotelImg"></div>
                             <div className="homePage-hotelInfo">
                                 <p className="homePage-hotelName">
@@ -149,7 +151,7 @@ export default function UserHome() {
                                 <>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">Nome:</p>
-                                        <input id="name" className="userHomePage-profilePropValue" value={profile.name} readonly />
+                                        <input id="name" className="userHomePage-profilePropValue" value={profile.name} readOnly />
                                     </div>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">CNPJ:</p>
@@ -157,15 +159,15 @@ export default function UserHome() {
                                     </div>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">Email:</p>
-                                        <input id="email" className="userHomePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" readonly />
+                                        <input id="email" className="userHomePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" readOnly />
                                     </div>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">Cidade:</p>
-                                        <input id="city" className="userHomePage-profilePropValue" value={profile.city} readonly />
+                                        <input id="city" className="userHomePage-profilePropValue" value={profile.city} readOnly />
                                     </div>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">Descrição:</p>
-                                        <input id="description" className="userHomePage-profilePropValue" value={profile.description} readonly />
+                                        <input id="description" className="userHomePage-profilePropValue" value={profile.description} readOnly />
                                     </div>
                                 </>
                             }
@@ -173,25 +175,26 @@ export default function UserHome() {
                                 <>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">URL</p>
-                                        <input id="url" className="userHomePage-profilePropValue" value={profile.url} readonly />
+                                        <input id="url" className="userHomePage-profilePropValue" value={profile.url} readOnly />
                                     </div>
                                     <div className="userHomePage-profileProps">
                                         <p className="userHomePage-profilePropName">Email:</p>
-                                        <input id="email" className="userHomePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" readonly />
+                                        <input id="email" className="userHomePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" readOnly />
                                     </div>
                                 </>
                             }
                             {user.type === 'admin' &&
                                 <div className="userHomePage-profileProps">
                                     <p className="userHomePage-profilePropName">Email:</p>
-                                    <input id="email" className="userHomePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" readonly />
+                                    <input id="email" className="userHomePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" readOnly />
                                 </div>
                             }
                         </div>
                     </div>
-                    <Link className="userHomePage-editProfileButton" to='/editProfile' >EDITAR PERFIL</Link>
+                    <Link className="userHomePage-editProfileButton" to='/profile' >EDITAR PERFIL</Link>
                 </div>
             </div>
         </div>
+        </>
     )
 }

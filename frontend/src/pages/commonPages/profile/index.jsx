@@ -12,6 +12,7 @@ export default function Profile() {
     const [name, setName] = useState('')
     const [dailyRate, setDailyRate] = useState(0)
     const [city, setCity] = useState('')
+    const [description, setDescription] = useState('')
     const user = JSON.parse(sessionStorage.getItem('user'))
 
     async function getProfile() {
@@ -47,9 +48,43 @@ export default function Profile() {
         }
     }
 
-    useEffect(()=>{
+    async function submitEdit() {
+        try {
+            const userData = {
+                email: email,
+                id_user: user.id_user,
+                type: user.type
+            }
+            await api.put('/editUser', userData)
+            if (user.type === 'hotel') {
+                const data = {
+                    id_user: user.id_user,
+                    type: user.type,
+                    email: email,
+                    name: name,
+                    city: city,
+                    description: description
+                }
+                await api.put('/hotel/edit')
+            } else if (user.type === 'booking_site') {
+                const data = {
+                    id_user: user.id_user,
+                    type: user.type,
+                    email: email,
+                    name: name,
+                    url: url,
+                }
+                await api.put('/bookingSite/edit', data)
+            }
+            alert('Perfil Editado com Sucesso!')
+        } catch (error) {
+            alert('Erro ao editar perfil. Por favor, tente novamente.')
+        }
+    }
+
+    useEffect(() => {
         getProfile()
-    })
+    }, [])
 
     return (
         <div className="profilePage-pageContent">
@@ -63,12 +98,12 @@ export default function Profile() {
                             <p>Meu Perfil</p>
                             <hr className="profilePage-headerSeparator" />
                         </div>
-                        <form id="profileForm" className="profilePage-profileData">
-                        {user.type === 'hotel' &&
+                        <form id="profileForm" className="profilePage-profileData" onSubmit={submitEdit}>
+                            {user.type === 'hotel' &&
                                 <>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">Nome:</p>
-                                        <input id="name" className="profilePage-profilePropValue" value={profile.name} onChange={e=>setName(e.target.value)} />
+                                        <input id="name" className="profilePage-profilePropValue" defaultValue={profile.name} onChange={e => setName(e.target.value)} />
                                     </div>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">CNPJ:</p>
@@ -76,15 +111,15 @@ export default function Profile() {
                                     </div>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">Email:</p>
-                                        <input id="email" className="profilePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto"  />
+                                        <input id="email" className="profilePage-profilePropValue" defaultValue={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" onChange={e => setEmail(e.target.value)} />
                                     </div>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">Cidade:</p>
-                                        <input id="city" className="profilePage-profilePropValue" value={profile.city}  />
+                                        <input id="city" className="profilePage-profilePropValue" defaultValue={profile.city} onChange={e => setCity(e.target.value)} />
                                     </div>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">Descrição:</p>
-                                        <input id="description" className="profilePage-profilePropValue" value={profile.description}  />
+                                        <input id="description" className="profilePage-profilePropValue" defaultValue={profile.description} onChange={e => setDescription(e.target.value)} />
                                     </div>
                                 </>
                             }
@@ -92,22 +127,22 @@ export default function Profile() {
                                 <>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">URL</p>
-                                        <input id="url" className="profilePage-profilePropValue" value={profile.url}  />
+                                        <input id="url" className="profilePage-profilePropValue" defaultValue={profile.url} onChange={e => setUrl(e.target.value)} />
                                     </div>
                                     <div className="profilePage-profileProps">
                                         <p className="profilePage-profilePropName">Email:</p>
-                                        <input id="email" className="profilePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto"  />
+                                        <input id="email" className="profilePage-profilePropValue" defaultValue={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" onChange={e => setEmail(e.target.value)} />
                                     </div>
                                 </>
                             }
                             {user.type === 'admin' &&
                                 <div className="profilePage-profileProps">
                                     <p className="profilePage-profilePropName">Email:</p>
-                                    <input id="email" className="profilePage-profilePropValue" value={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto"  />
+                                    <input id="email" className="profilePage-profilePropValue" defaultValue={profile.email} pattern="[a-z]+([a-z]|.)*@[a-z]+\.([a-z]|.)*" title="Formato de email incorreto" onChange={e => setEmail(e.target.value)} />
                                 </div>
                             }
                         </form>
-                        <button id="editProfileButton" type="submit" className="profilePage-editProfileButton">EDITAR PERFIL</button>
+                        <button id="editProfileButton" type="submit" className="profilePage-editProfileButton" onClick={submitEdit}>EDITAR PERFIL</button>
                     </div>
                 </div>
             </div>

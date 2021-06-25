@@ -35,7 +35,7 @@ export default function Sidebar() {
           <span id="logo">Booking Deals</span>
         </a>
         <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
-          <li>
+          <li className="sidebarItem">
             <a
               href="http://localhost:3000/userHome"
               className="nav-link py-3"
@@ -48,7 +48,7 @@ export default function Sidebar() {
             </a>
           </li>
           {user!==null &&
-            <li>
+            <li className="sidebarItem">
               <a
                 href="http://localhost:3000/profile"
                 className="nav-link py-3"
@@ -61,7 +61,7 @@ export default function Sidebar() {
               </a>
             </li>
           }
-          <li>
+          <li className="sidebarItem">
             <a
               href="#"
               className="nav-link py-3"
@@ -73,7 +73,7 @@ export default function Sidebar() {
               <span id="nav-promo">Promoções</span>
             </a>
           </li>
-          <li>
+          <li className="sidebarItem">
             <a
               href="http://localhost:3000/hotelList"
               className="nav-link py-3"
@@ -86,7 +86,7 @@ export default function Sidebar() {
             </a>
           </li>
           {(user!==null && (user.type === 'admin' | user.type === 'hotel')) &&
-            <li>
+            <li className="sidebarItem">
               <a
                 href="http://localhost:3000/addSales"
                 className="nav-link py-3"
@@ -101,7 +101,7 @@ export default function Sidebar() {
           }
           {(user!==null && user.type === 'admin' )&&
             <>
-              <li>
+              <li className="sidebarItem">
                 <a
                   href="http://localhost:3000/addHotel"
                   className="nav-link py-3"
@@ -113,7 +113,7 @@ export default function Sidebar() {
                   <span id="nav-add-hotel">Registrar Hotel</span>
                 </a>
               </li>
-              <li>
+              <li className="sidebarItem">
                 <a
                   href="http://localhost:3000/addBookingSite"
                   className="nav-link py-3"
@@ -128,7 +128,7 @@ export default function Sidebar() {
             </>
           }
           {user!==null &&
-            <li>
+            <li className="sidebarItem">
               <a
                 id="logout"
                 className="nav-link py-3"
