@@ -18,7 +18,7 @@ module.exports = {
         const { email, password } = request.body;
         console.log(email, password);
         try {
-            //returns the user data, if exists on database
+            //retorna user data se existir
             const user = await connection('user')
                 .where('email', email)
                 .select('id_user', 'email', 'password', 'type').first();
